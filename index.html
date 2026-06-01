@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F.J.E.R.E. ONGD-ASBL - Réussir Ensemble</title>
+    <!-- FontAwesome pour les icônes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* --- BASES DE DESIGN PREMIUM --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --primary: #0d6938;       /* Vert officiel FJE */
+            --primary-dark: #074623;  /* Vert sombre de confiance */
+            --accent: #7bc143;        /* Vert éclatant */
+            --accent-gold: #cca43b;   /* Or subtil pour les détails premium */
+            --bg-light: #f9fbf9;      /* Fond de page très clair et moderne */
+            --surface: #ffffff;
+            --text-main: #111827;     /* Texte sombre pro */
+            --text-muted: #4b5563;
+            --border: #e5e7eb;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-main);
+            line-height: 1.8;
+            font-size: 16px;
+        }
+
+        /* --- BARRE DE NAVIGATION VITRINE --- */
+        .navbar {
+            position: fixed;
+            top: 0; left: 0; width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #e5e7eb;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 8%;
+            z-index: 1000;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.02);
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .logo-container {
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-container img {
+            height: 100%;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .logo-fallback {
+            color: var(--accent-gold);
+            font-size: 26px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nav-title {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .nav-title h1 {
+            font-size: 19px;
+            color: var(--primary-dark);
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: -0.3px;
+        }
+        
+        .nav-title span {
+            font-size: 10.5px;
+            color: var(--primary);
+            display: block;
+            letter-spacing: 1.8px;
+            font-weight: 700;
+            margin-top: 2px;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 35px;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 600;
+            font-size: 15px;
+            transition: color 0.2s ease;
+        }
+        .nav-menu a:hover { color: var(--primary); }
+
+        .btn-nav-join {
+            background: var(--primary);
+            color: white !important;
+            padding: 11px 26px;
+            border-radius: 30px;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 12px rgba(13, 105, 56, 0.15);
+        }
+        .btn-nav-join:hover { 
+            background: var(--primary-dark);
+            transform: translateY(-1px);
+        }
+
+        /* --- ACCUEIL HERO BANNER --- */
+        .hero {
+            min-height: 85vh;
+            background: linear-gradient(135deg, rgba(7, 70, 35, 0.95) 0%, rgba(3, 32, 15, 0.98) 100%), url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1500&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 150px 24px 90px 24px;
+        }
+
+        .hero h2 {
+            font-size: 46px;
+            font-weight: 800;
+            max-width: 950px;
+            line-height: 1.3;
+            margin-bottom: 24px;
+            letter-spacing: -0.5px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: #e5e7eb;
+            max-width: 700px;
+            margin-bottom: 45px;
+            font-weight: 400;
+        }
+
+        .btn-main-action {
+            background: var(--accent);
+            color: var(--primary-dark);
+            padding: 18px 44px;
+            border-radius: 35px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: 0 6px 24px rgba(123, 193, 67, 0.35);
+        }
+        .btn-main-action:hover {
+            background: var(--surface);
+            color: var(--primary);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 24px rgba(255, 255, 255, 0.2);
+        }
+
+        /* --- COMPTEURS STATISTIQUES --- */
+        .stats-section {
+            background: var(--surface);
+            padding: 60px 8%;
+            border-bottom: 1px solid #f3f4f6;
+        }
+
+        .stats-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+        }
+
+        .stat-item { text-align: center; }
+        .stat-item h3 {
+            font-size: 44px;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 6px;
+            letter-spacing: -1px;
+        }
+        .stat-item p {
+            font-size: 13.5px;
+            color: var(--text-muted);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* --- SECTIONS ÉPURÉES --- */
+        section {
+            padding: 100px 10%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 34px;
+            color: var(--primary-dark);
+            margin-bottom: 65px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+        .section-title::after {
+            content: ''; 
+            display: block; 
+            width: 55px; 
+            height: 4px;
+            background: var(--accent); 
+            margin: 14px auto 0 auto; 
+            border-radius: 4px;
+        }
+
+        /* --- DESIGN TEXTUEL RE-STRUCTURÉ ET ORDONNÉ --- */
+        .presentation-center-layout {
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .history-text {
+            font-size: 18.5px;
+            color: #374151;
+            text-align: center;
+            margin-bottom: 45px;
+            line-height: 1.9;
+        }
+
+        .values-list-inline {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px 40px;
+            list-style: none;
+            margin-top: 25px;
+        }
+        .values-list-inline li {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--primary-dark);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .values-list-inline i {
+            color: var(--accent);
+            font-size: 15px;
+        }
+
+        /* --- DESIGN DE TEXTE LINÉAIRE POUR LES MISSIONS --- */
+        .ordered-text-flow {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .main-objective-box {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .main-objective-box h3 {
+            font-size: 24px;
+            color: var(--primary);
+            margin-bottom: 18px;
+            font-weight: 800;
+        }
+
+        .main-objective-box p {
+            font-size: 21px;
+            color: var(--text-main);
+            line-height: 1.8;
+            font-weight: 500;
+            font-style: italic;
+        }
+
+        .sub-objectives-container h3 {
+            font-size: 22px;
+            color: var(--primary-dark);
+            margin-bottom: 30px;
+            font-weight: 700;
+            border-left: 4px solid var(--accent);
+            padding-left: 15px;
+        }
+
+        .vertical-text-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .vertical-text-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            padding-bottom: 18px;
+            border-bottom: 1px solid #f3f4f6;
+        }
+
+        .list-number {
+            background: #eaf6ed;
+            color: var(--primary);
+            font-weight: 800;
+            font-size: 13px;
+            min-width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .list-content {
+            font-size: 17px;
+            color: #374151;
+            line-height: 1.65;
+        }
+
+        /* --- SECTEURS D'INTERVENTION ÉPURÉS --- */
+        .sectors-clean-layout {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 45px;
+        }
+
+        .sector-clean-item {
+            text-align: left;
+        }
+        .sector-clean-item h4 {
+            font-size: 20px;
+            color: var(--primary-dark);
+            margin: 16px 0 10px 0;
+            font-weight: 700;
+        }
+        .sector-clean-item p {
+            font-size: 15.5px;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+        .sector-icon-wrap {
+            font-size: 26px;
+            color: var(--primary);
+        }
+
+        /* --- FOOTER COORDONNÉES --- */
+        footer {
+            background: #03140b;
+            color: white;
+            padding: 85px 10% 45px 10%;
+        }
+
+        .footer-main-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 60px;
+            max-width: 1200px;
+            margin: 0 auto 50px auto;
+            padding-bottom: 45px;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .footer-contacts {
+            list-style: none;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+        .footer-contacts li {
+            font-size: 14.5px;
+            color: #9ca3af;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .footer-contacts i { color: var(--accent); }
+
+        /* --- POPUP MODAL --- */
+        .modal-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            padding: 24px;
+        }
+
+        .modal-box {
+            background: var(--surface);
+            width: 100%;
+            max-width: 460px;
+            border-radius: 16px;
+            padding: 40px;
+            position: relative;
+        }
+
+        .modal-close-btn {
+            position: absolute;
+            top: 24px; right: 24px;
+            background: none; border: none;
+            font-size: 22px; color: var(--text-muted);
+            cursor: pointer;
+        }
+
+        .modal-tabs {
+            display: flex;
+            border-bottom: 2px solid #f3f4f6;
+            margin-bottom: 30px;
+        }
+
+        .modal-tab-btn {
+            flex: 1; text-align: center; padding-bottom: 12px;
+            font-weight: 700; color: var(--text-muted);
+            background: none; border: none; cursor: pointer; font-size: 16px;
+        }
+        .modal-tab-btn.active {
+            color: var(--primary);
+            border-bottom: 3px solid var(--primary);
+        }
+
+        .modal-form-view { display: none; }
+        .modal-form-view.active { display: block; }
+
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; font-size: 14px; font-weight: 600; margin-bottom: 8px; }
+        
+        .form-input {
+            width: 100%; padding: 12px 16px; border: 1px solid #d1d5db;
+            border-radius: 8px; font-size: 15px; outline: none;
+        }
+
+        .btn-modal-submit {
+            width: 100%; padding: 14px; background: var(--primary); color: white;
+            border: none; border-radius: 8px; font-weight: 700; cursor: pointer;
+            margin-top: 10px; font-size: 16px;
+        }
+
+        @media (max-width: 950px) {
+            .nav-menu { display: none; }
+            .hero h2 { font-size: 30px; }
+            .stats-container { grid-template-columns: repeat(2, 1fr); }
+            .sectors-clean-layout, .footer-main-grid, .footer-contacts { grid-template-columns: 1fr; gap: 35px; }
+            section { padding: 70px 24px; }
+        }
+        /* ==========================
+   SUPPORT TECHNIQUE PREMIUM
+========================== */
+.support-tech{
+    position: fixed;
+    bottom: 30px;
+    right: 45px; /* légèrement vers le centre */
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #0d6938, #7bc143);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 28px;
+    z-index: 9999;
+    box-shadow: 0 10px 30px rgba(13,105,56,0.35);
+    transition: all 0.3s ease;
+    animation: supportPulse 2.5s infinite;
+}
+
+.support-tech:hover{
+    transform: translateY(-5px) scale(1.08);
+    box-shadow: 0 15px 35px rgba(13,105,56,0.5);
+}
+
+/* Halo lumineux */
+.support-tech::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: rgba(123,193,67,0.35);
+    animation: ripple 2.5s infinite;
+    z-index: -1;
+}
+
+/* Animation douce */
+@keyframes supportPulse{
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.08);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+@keyframes ripple{
+    0%{
+        transform: scale(1);
+        opacity: 0.8;
+    }
+    100%{
+        transform: scale(1.8);
+        opacity: 0;
+    }
+}
+
+/* Mobile */
+@media (max-width:768px){
+    .support-tech{
+        width: 58px;
+        height: 58px;
+        font-size: 24px;
+        right: 20px;
+        bottom: 20px;
+    }
+}
+    </style>
+</head>
+<body>
+
+    <!-- BARRE DE NAVIGATION VITRINE -->
+    <nav class="navbar">
+        <div class="nav-logo">
+            <div class="logo-container">
+                <img src="logo.jpg" alt="Logo Officiel F.J.E.R.E." onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="logo-fallback" style="display:none;"><i class="fas fa-feather-alt"></i></div>
+            </div>
+            <div class="nav-title">
+                <h1>F.J.E.R.E. ONGD</h1>
+                <span>RÉUSSIR ENSEMBLE</span>
+            </div>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="#presentation">Qui sommes-nous ?</a></li>
+            <li><a href="#mission">Missions &amp; Vision</a></li>
+            <li><a href="#secteurs">Interventions</a></li>
+            <li><a href="javascript:void(0)" class="btn-nav-join" onclick="ouvrirModal('register')">S'inscrire</a></li>
+        </ul>
+    </nav>
+
+    <!-- ACCUEIL BANNER FLUIDE -->
+    <header class="hero">
+        <h2>Ensemble, éveillons les talents, formons, accompagnons et promouvons le changement.</h2>
+        <p>« Agir aujourd'hui pour construire un avenir meilleur » — F.J.E.R.E. ONGD-ASBL</p>
+        <button class="btn-main-action" onclick="ouvrirModal('register')">Rejoindre le mouvement</button>
+    </header>
+
+    <!-- COMPTEURS STATISTIQUES CONSOLIDÉS -->
+    <div class="stats-section">
+        <div class="stats-container">
+            <div class="stat-item">
+                <h3>+1000</h3>
+                <p>Jeunes éveillés</p>
+            </div>
+            <div class="stat-item">
+                <h3>12</h3>
+                <p>Conférences clés</p>
+            </div>
+            <div class="stat-item">
+                <h3>125</h3>
+                <p>Métiers certifiés</p>
+            </div>
+            <div class="stat-item">
+                <h3>+250</h3>
+                <p>Vulnérables assistés</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION PRÉSENTATION LINÉAIRE -->
+    <section id="presentation">
+        <h2 class="section-title">Présentation &amp; Origine</h2>
+        <div class="presentation-center-layout">
+            <p class="history-text">
+                Créée le <strong>2 août 2018</strong> à Lubumbashi, au sein de la Province du Haut-Katanga (RDC), la <strong>Force des Jeunes Entrepreneurs Réussir Ensemble (F.J.E.R.E.)</strong> a structuré ses premières démarches de terrain dès le 19 décembre 2021. En tant qu'Organisation Non Gouvernementale de Développement sans but lucratif, elle concentre toutes ses compétences dans l'accompagnement, l'instruction civique et l'encadrement entrepreneurial des femmes et de la jeunesse congolaise.
+            </p>
+            
+            <div style="text-align: center; margin-top: 35px;">
+                <h4 style="font-size: 13px; text-transform: uppercase; color: var(--text-muted); letter-spacing: 1.2px; font-weight: 700;">Nos Valeurs Cardinales</h4>
+                <ul class="values-list-inline">
+                    <li><i class="fas fa-heart"></i> L'amour &amp; l'unité</li>
+                    <li><i class="fas fa-shield-halved"></i> La discipline &amp; le respect</li>
+                    <li><i class="fas fa-users"></i> La responsabilité sociétale</li>
+                    <li><i class="fas fa-gavel"></i> La bonne gouvernance</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION MISSION TEXTUELLE TOTALEMENT RÉORDONNÉE ET FLUIDE -->
+    <section id="mission" style="background-color: var(--surface); max-width: 100%;">
+        <h2 class="section-title">Notre Vision d'Impact</h2>
+        
+        <div class="ordered-text-flow">
+            
+            <!-- Bloc Objectif Général Centré Magnifiquement -->
+            <div class="main-objective-box">
+                <h3>Objectif Général</h3>
+                <p>
+                    « Promouvoir activement la jeunesse congolaise par la fédération de citoyens leaders, porteurs d'idées neuves, de projets de société constructifs et de schémas de développement durable via l'entrepreneuriat sous toutes ses formes »
+                </p>
+            </div>
+
+            <!-- Liste ordonnée de haut en bas sans désordre -->
+            <div class="sub-objectives-container">
+                <h3>Objectifs Spécifiques</h3>
+                
+                <ul class="vertical-text-list">
+                    <li>
+                        <div class="list-number">01</div>
+                        <div class="list-content">Éveiller durablement les consciences par des canaux de formation de proximité de qualité.</div>
+                    </li>
+                    <li>
+                        <div class="list-number">02</div>
+                        <div class="list-content">Encadrer, guider et assurer la promotion continue des groupes cibles de l'organisation.</div>
+                    </li>
+                    <li>
+                        <div class="list-number">03</div>
+                        <div class="list-content">Soutenir la réinsertion sociale des femmes, des jeunes ainsi que de toutes les personnes vulnérables.</div>
+                    </li>
+                    <li>
+                        <div class="list-number">04</div>
+                        <div class="list-content">Inculquer les valeurs citoyennes indispensables par une assimilation concrète des textes légaux.</div>
+                    </li>
+                    <li>
+                        <div class="list-number">05</div>
+                        <div class="list-content">Participer activement à la création d'une classe moyenne stable par le biais de l'entrepreneuriat économique.</div>
+                    </li>
+                    <li>
+                        <div class="list-number">06</div>
+                        <div class="list-content">Rapprocher de façon stratégique la jeunesse des pôles gouvernants pour l'inclure au cœur du développement du pays.</div>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECTEURS D'INTERVENTION -->
+    <section id="secteurs">
+        <h2 class="section-title">Domaines d'Intervention</h2>
+        <div class="sectors-clean-layout">
+            
+            <div class="sector-clean-item">
+                <div class="sector-icon-wrap"><i class="fas fa-wheat-awn"></i></div>
+                <h4>Agriculture &amp; Élevage</h4>
+                <p>Déploiement de projets agricoles pour structurer l'autosuffisance et contrer l'impact du changement climatique.</p>
+            </div>
+
+            <div class="sector-clean-item">
+                <div class="sector-icon-wrap"><i class="fas fa-user-gear"></i></div>
+                <h4>Éducation &amp; Arts publics</h4>
+                <p>Formations qualifiantes, apprentissage de métiers pratiques pour faciliter une intégration immédiate sur le marché.</p>
+            </div>
+
+            <div class="sector-clean-item">
+                <div class="sector-icon-wrap"><i class="fas fa-scale-balanced"></i></div>
+                <h4>Droits Humains</h4>
+                <p>Lutte contre l'exploitation des enfants dans les mines, promotion de l'égalité et civisme.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- COORDONNÉES ET BAS DE PAGE -->
+    <footer>
+        <div class="footer-main-grid">
+            <div>
+                <h3 style="font-size: 22px; color: var(--accent); margin-bottom: 8px; font-weight: 800;">F.J.E.R.E. ONGD-ASBL</h3>
+                <p style="font-size: 15px; color: #9ca3af; margin-bottom: 20px;">Force des Jeunes Entrepreneurs Réussir Ensemble</p>
+                <p style="font-size: 14px; color: #6b7280; line-height: 1.6;">
+                    Siège social : Avenue Chemin Public, N°3345,<br>
+                    Quartier Gambella II, Commune de Lubumbashi,<br>
+                    Province du Haut-Katanga, République Démocratique du Congo.
+                </p>
+            </div>
+            <div>
+                <h4 style="font-size: 15px; color: white; margin-bottom: 20px; font-weight: 700; text-transform: uppercase;">Contacts direct</h4>
+                <ul class="footer-contacts">
+                    <li><i class="fas fa-phone"></i> +243 97 89 10 379</li>
+                    <li><i class="fas fa-phone"></i> +243 810 746 421</li>
+                    <li><i class="fas fa-envelope"></i> forcedesjeunesentrepreneurs@gmail.com</li>
+                    <li><i class="fas fa-location-dot"></i> Lubumbashi, RDC</li>
+                </ul>
+            </div>
+        </div>
+        <p style="text-align: center; font-size: 13px; color: #4b5563;">&copy; 2026 F.J.E.R.E. ONGD. Tous droits réservés.</p>
+    </footer>
+
+    <!-- INTERFACE INTERACTIVE MODAL (POPUP) -->
+    <div class="modal-overlay" id="action-modal">
+        <div class="modal-box">
+            <button class="modal-close-btn" onclick="fermerModal()"><i class="fas fa-times"></i></button>
+            
+            <div class="modal-tabs">
+                <button class="modal-tab-btn active" id="tab-reg-btn" onclick="basculerModalForm('register')">S'inscrire</button>
+                <button class="modal-tab-btn" id="tab-log-btn" onclick="basculerModalForm('login')">Se connecter</button>
+            </div>
+
+            <!-- Formulaire d'Inscription -->
+            <div class="modal-form-view active" id="modal-form-register">
+                <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 24px;">Rejoignez le réseau des citoyens leaders en remplissant votre fiche.</p>
+                <div class="form-group">
+                    <label>Nom complet</label>
+                    <input type="text" class="form-input" placeholder="Ex: Victoir">
+                </div>
+                <div class="form-group">
+                    <label>Adresse e-mail</label>
+                    <input type="email" class="form-input" placeholder="nom@domaine.com">
+                </div>
+                <div class="form-group">
+                    <label>Motivation principale</label>
+                    <input type="text" class="form-input" placeholder="Ex: Appui à l'entrepreneuriat">
+                </div>
+                <button class="btn-modal-submit" onclick="confirmerAction()">Valider mon adhésion</button>
+            </div>
+
+            <!-- Formulaire de Connexion -->
+            <div class="modal-form-view" id="modal-form-login">
+                <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 24px;">Identifiez-vous pour continuer sur la plateforme.</p>
+                <div class="form-group">
+                    <label>Adresse e-mail</label>
+                    <input type="email" class="form-input" placeholder="votre@email.com">
+                </div>
+                <div class="form-group">
+                    <label>Mot de passe</label>
+                    <input type="password" class="form-input" placeholder="••••••••">
+                </div>
+                <button class="btn-modal-submit" onclick="confirmerAction()">Se connecter</button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- CONTRÔLE LOGICIEL DE LA MODALE -->
+    <script>
+        function ouvrirModal(typeInitial) {
+            document.getElementById('action-modal').style.display = 'flex';
+            basculerModalForm(typeInitial);
+        }
+
+        function fermerModal() {
+            document.getElementById('action-modal').style.display = 'none';
+        }
+
+        function basculerModalForm(type) {
+            document.getElementById('modal-form-register').classList.remove('active');
+            document.getElementById('modal-form-login').classList.remove('active');
+            document.getElementById('tab-reg-btn').classList.remove('active');
+            document.getElementById('tab-log-btn').classList.remove('active');
+
+            if(type === 'register') {
+                document.getElementById('modal-form-register').classList.add('active');
+                document.getElementById('tab-reg-btn').classList.add('active');
+            } else {
+                document.getElementById('modal-form-login').classList.add('active');
+                document.getElementById('tab-log-btn').classList.add('active');
+            }
+        }
+
+        function confirmerAction() {
+            alert("Traitement pris en compte avec succès !");
+            fermerModal();
+        }
+
+        window.onclick = function(event) {
+            let overlay = document.getElementById('action-modal');
+            if (event.target == overlay) {
+                fermerModal();
+            }
+        }
+    </script>
+    <!-- Support Technique Flottant -->
+<a href="support.html" class="support-tech" title="Support Technique">
+    <i class="fas fa-headset"></i>
+</a>
+</body>
+</html>
