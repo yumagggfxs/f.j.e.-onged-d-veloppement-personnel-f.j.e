@@ -1,0 +1,1845 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>F.J.E.R.E. ONGD - Réussir Ensemble</title>
+
+  <!-- FAVICON (icône du navigateur) -->
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="shortcut icon" href="logo.png" type="image/png">
+
+  <!-- OPEN GRAPH (partage WhatsApp / Facebook / etc.) -->
+  <meta property="og:title" content="F.J.E.R.E. ONGD - Réussir Ensemble">
+  <meta property="og:description" content="Plateforme de développement, éducation et transformation sociale de la F.J.E.R.E.">
+  <meta property="og:image" content="https://f-j-e-onged-victoir-eloppement-pers.vercel.app/logo.png">
+  <meta property="og:url" content="https://f-j-e-onged-victoir-eloppement-pers.vercel.app/">
+  <meta property="og:type" content="website">
+
+  <!-- (optionnel mais recommandé pour WhatsApp) -->
+  <meta name="theme-color" content="#0d6938">
+    <title>FJERE ONGD</title>
+
+    <meta name="google-site-verification" content="LVqH72DU6sxfgPf1ziHt0MwNzLUEkwGHt_7wE3eZ5iM" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- FontAwesome pour les icônes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* --- BASES DE DESIGN PREMIUM --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            scroll-behavior: smooth;
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+
+        :root {
+            --primary: #0d6938;       /* Vert officiel FJE */
+            --primary-dark: #074623;  /* Vert sombre de confiance */
+            --accent: #7bc143;        /* Vert éclatant */
+            --accent-gold: #cca43b;   /* Or subtil pour les détails premium */
+            --bg-light: #f9fbf9;      /* Fond de page très clair et moderne */
+            --surface: #ffffff;
+            --text-main: #111827;     /* Texte sombre pro */
+            --text-muted: #4b5563;
+            --border: #e5e7eb;
+            --nav-bg: rgba(255, 255, 255, 0.98);
+            --hero-overlay: linear-gradient(135deg, rgba(7, 70, 35, 0.95) 0%, rgba(3, 32, 15, 0.98) 100%);
+        }
+
+        /* 7 THÈMES MULTICOLORES */
+        [data-theme="dark"] {
+            --primary: #10b981; --primary-dark: #047857; --accent: #34d399; --accent-gold: #fbbf24;
+            --bg-light: #111827; --surface: #1f2937; --text-main: #f9fafb; --text-muted: #9ca3af;
+            --border: #374151; --nav-bg: rgba(17, 24, 39, 0.98);
+            --hero-overlay: linear-gradient(135deg, rgba(4, 120, 87, 0.95) 0%, rgba(6, 78, 59, 0.98) 100%);
+        }
+        [data-theme="light"] {
+            --primary: #2563eb; --primary-dark: #1d4ed8; --accent: #60a5fa; --accent-gold: #d97706;
+            --bg-light: #f9fafb; --surface: #ffffff; --text-main: #1f2937; --text-muted: #4b5563;
+            --border: #e5e7eb; --nav-bg: rgba(255, 255, 255, 0.98);
+            --hero-overlay: linear-gradient(135deg, rgba(29, 78, 216, 0.95) 0%, rgba(30, 58, 138, 0.98) 100%);
+        }
+        [data-theme="ocean"] {
+            --primary: #0284c7; --primary-dark: #0369a1; --accent: #38bdf8; --accent-gold: #f59e0b;
+            --bg-light: #f0f9ff; --surface: #ffffff; --text-main: #0c4a6e; --text-muted: #334155;
+            --border: #e0f2fe; --nav-bg: rgba(240, 249, 255, 0.98);
+            --hero-overlay: linear-gradient(135deg, rgba(3, 105, 161, 0.95) 0%, rgba(12, 74, 110, 0.98) 100%);
+        }
+        [data-theme="orange"] {
+            --primary: #ea580c; --primary-dark: #c2410c; --accent: #f97316; --accent-gold: #b45309;
+            --bg-light: #fff7ed; --surface: #ffffff; --text-main: #431407; --text-muted: #7c2d12;
+            --border: #ffedd5; --nav-bg: rgba(255, 247, 237, 0.98);
+            --hero-overlay: linear-gradient(135deg, rgba(194, 65, 12, 0.95) 0%, rgba(67, 20, 7, 0.98) 100%);
+        }
+        [data-theme="purple"] {
+            --primary: #7c3aed; --primary-dark: #6d28d9; --accent: #a78bfa; --accent-gold: #db2777;
+            --bg-light: #faf5ff; --surface: #ffffff; --text-main: #3b0764; --text-muted: #581c87;
+            --border: #f3e8ff; --nav-bg: rgba(250, 245, 255, 0.98);
+            --hero-overlay: linear-gradient(135deg, rgba(109, 40, 217, 0.95) 0%, rgba(59, 7, 100, 0.98) 100%);
+        }
+        [data-theme="forest"] {
+            --primary: #15803d; --primary-dark: #14532d; --accent: #4ade80; --accent-gold: #eab308;
+            --bg-light: #f0fdf4; --surface: #ffffff; --text-main: #14532d; --text-muted: #166534;
+            --border: #dcfce7; --nav-bg: rgba(240, 253, 244, 0.98);
+            --hero-overlay: linear-gradient(135deg, rgba(20, 83, 45, 0.95) 0%, rgba(10, 48, 24, 0.98) 100%);
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-main);
+            line-height: 1.8;
+            font-size: 16px;
+        }
+
+        /* --- BARRE DE NAVIGATION VITRINE --- */
+        .navbar {
+            position: fixed;
+            top: 0; left: 0; width: 100%;
+            background: var(--nav-bg);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 8%;
+            z-index: 1000;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.02);
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .logo-container {
+            height: 52px;
+            width: 52px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            overflow: hidden;
+            background-color: #ffffff !important;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+            border: 2px solid var(--primary);
+        }
+
+        .logo-container img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .logo-fallback {
+            color: var(--accent-gold);
+            font-size: 26px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nav-title {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .nav-title h1 {
+            font-size: 19px;
+            color: var(--primary-dark);
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: -0.3px;
+        }
+        
+        .nav-title span {
+            font-size: 10.5px;
+            color: var(--primary);
+            display: block;
+            letter-spacing: 1.8px;
+            font-weight: 700;
+            margin-top: 2px;
+        }
+
+        .nav-right-container {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 35px;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 600;
+            font-size: 15px;
+            transition: color 0.2s ease;
+        }
+        .nav-menu a:hover { color: var(--primary); }
+
+        .btn-nav-join {
+            background: var(--primary);
+            color: white !important;
+            padding: 11px 26px;
+            border-radius: 30px;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 12px rgba(13, 105, 56, 0.15);
+            cursor: pointer;
+        }
+        .btn-nav-join:hover { 
+            background: var(--primary-dark);
+            transform: translateY(-1px);
+        }
+
+        /* --- DESIGN DU COMMUTATEUR --- */
+        .theme-switcher {
+            position: relative;
+            display: inline-block;
+        }
+
+        .theme-btn {
+            background: none;
+            border: 1px solid var(--border);
+            color: var(--text-main);
+            padding: 10px 14px;
+            font-size: 1.1rem;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--surface);
+        }
+
+        .theme-btn:hover {
+            color: var(--primary);
+            border-color: var(--primary);
+        }
+
+        .theme-dropdown {
+            display: none;
+            position: absolute;
+            right: 0;
+            top: 45px;
+            background-color: var(--surface);
+            min-width: 190px;
+            box-shadow: 0px 8px 24px rgba(0,0,0,0.15);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            z-index: 1100;
+            overflow: hidden;
+            padding: 6px 0;
+        }
+
+        .theme-dropdown button {
+            color: var(--text-main);
+            padding: 10px 16px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            width: 100%;
+            border: none;
+            background: none;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-align: left;
+            cursor: pointer;
+        }
+
+        .theme-dropdown button:hover {
+            background-color: var(--border);
+            color: var(--primary);
+        }
+
+        .theme-dropdown.show { display: block; }
+
+        /* --- ACCUEIL HERO BANNER --- */
+       .hero {
+    min-height: 85vh;
+    background:
+    linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+    url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1500&q=80');
+
+    background-size: cover;
+    background-position: center;
+
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    padding: 150px 24px 90px 24px;
+}
+
+        .hero h2 {
+            font-size: 46px;
+            font-weight: 800;
+            max-width: 950px;
+            line-height: 1.3;
+            margin-bottom: 24px;
+            letter-spacing: -0.5px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: #e5e7eb;
+            max-width: 700px;
+            margin-bottom: 45px;
+            font-weight: 400;
+        }
+
+        .btn-main-action {
+            background: var(--accent);
+            color: #074623;
+            padding: 18px 44px;
+            border-radius: 35px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: 0 6px 24px rgba(123, 193, 67, 0.35);
+        }
+        .btn-main-action:hover {
+            background: var(--surface);
+            color: var(--primary);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 24px rgba(255, 255, 255, 0.2);
+        }
+
+        /* --- COMPTEURS STATISTIQUES --- */
+        .stats-section {
+            background: var(--surface);
+            padding: 60px 8%;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .stats-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+        }
+
+        .stat-item { text-align: center; }
+        .stat-item h3 {
+            font-size: 44px;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 6px;
+            letter-spacing: -1px;
+        }
+        .stat-item p {
+            font-size: 13.5px;
+            color: var(--text-muted);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* --- SECTIONS ÉPURÉES --- */
+        section {
+            padding: 100px 10%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 34px;
+            color: var(--primary-dark);
+            margin-bottom: 65px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+        .section-title::after {
+            content: ''; 
+            display: block; 
+            width: 55px; 
+            height: 4px;
+            background: var(--accent); 
+            margin: 14px auto 0 auto; 
+            border-radius: 4px;
+        }
+
+        /* --- DESIGN TEXTUEL RE-STRUCTURÉ ET ORDONNÉ --- */
+        .presentation-center-layout {
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .history-text {
+            font-size: 18.5px;
+            color: var(--text-main);
+            text-align: center;
+            margin-bottom: 45px;
+            line-height: 1.9;
+        }
+
+        .values-list-inline {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px 40px;
+            list-style: none;
+            margin-top: 25px;
+        }
+        .values-list-inline li {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--primary-dark);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .values-list-inline i {
+            color: var(--accent);
+            font-size: 15px;
+        }
+
+        /* --- DESIGN DE TEXTE LINÉAIRE POUR LES MISSIONS --- */
+        .ordered-text-flow {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .main-objective-box {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .main-objective-box h3 {
+            font-size: 24px;
+            color: var(--primary);
+            margin-bottom: 18px;
+            font-weight: 800;
+        }
+
+        .main-objective-box p {
+            font-size: 21px;
+            color: var(--text-main);
+            line-height: 1.8;
+            font-weight: 500;
+            font-style: italic;
+        }
+
+        .sub-objectives-container h3 {
+            font-size: 22px;
+            color: var(--primary-dark);
+            margin-bottom: 30px;
+            font-weight: 700;
+            border-left: 4px solid var(--accent);
+            padding-left: 15px;
+        }
+
+        .vertical-text-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .vertical-text-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            padding-bottom: 18px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .list-number {
+            background: var(--bg-light);
+            color: var(--primary);
+            border: 1px solid var(--border);
+            font-weight: 800;
+            font-size: 13px;
+            min-width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .list-content {
+            font-size: 17px;
+            color: var(--text-main);
+            line-height: 1.65;
+        }
+
+        /* --- SECTEURS D'INTERVENTION ÉPURÉS --- */
+        .sectors-clean-layout {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 45px;
+        }
+
+        .sector-clean-item { text-align: left; }
+        .sector-clean-item h4 {
+            font-size: 20px;
+            color: var(--primary-dark);
+            margin: 16px 0 10px 0;
+            font-weight: 700;
+        }
+        .sector-clean-item p {
+            font-size: 15.5px;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+        .sector-icon-wrap {
+            font-size: 26px;
+            color: var(--primary);
+        }
+
+        /* --- FOOTER COORDONNÉES --- */
+        footer {
+            background: #03140b;
+            color: white;
+            padding: 85px 10% 45px 10%;
+        }
+
+        .footer-main-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 60px;
+            max-width: 1200px;
+            margin: 0 auto 50px auto;
+            padding-bottom: 45px;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .footer-contacts {
+            list-style: none;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+        .footer-contacts li {
+            font-size: 14.5px;
+            color: #9ca3af;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .footer-contacts i { color: var(--accent); }
+
+        /* --- NOUVELLE POPUP MODAL PLEIN ÉCRAN --- */
+        .modal-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: var(--bg-light);
+            display: none;
+            z-index: 2000;
+            overflow-y: auto;
+        }
+
+        .modal-container {
+            min-height: 100vh;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+        }
+
+        /* Colonne Gauche : Message de Motivation */
+        .modal-motivation-side {
+            background: var(--hero-overlay), url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+        }
+
+        .modal-motivation-side h2 {
+            font-size: 36px;
+            font-weight: 800;
+            line-height: 1.3;
+            margin-bottom: 20px;
+        }
+
+        .modal-motivation-side p {
+            font-size: 18px;
+            color: #e5e7eb;
+            line-height: 1.6;
+        }
+
+        /* Colonne Droite : Formulaire multi-étapes */
+        .modal-form-side {
+            background: var(--surface);
+            padding: 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+        }
+
+        .modal-close-fullscreen {
+            position: absolute;
+            top: 30px; right: 40px;
+            background: none; border: none;
+            font-size: 32px; color: var(--text-main);
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        /* Indicateur de progression */
+        .step-progress-bar {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 40px;
+        }
+        .progress-dot {
+            flex: 1; height: 6px;
+            background: var(--border);
+            border-radius: 4px;
+        }
+        .progress-dot.active {
+            background: var(--primary);
+        }
+
+        /* Étapes du formulaire */
+        .form-step { display: none; }
+        .form-step.active { display: block; }
+        
+        .form-step h3 {
+            font-size: 24px;
+            color: var(--primary-dark);
+            margin-bottom: 25px;
+            font-weight: 700;
+        }
+
+        .form-group { margin-bottom: 22px; }
+        .form-group label { display: block; font-size: 14px; font-weight: 600; margin-bottom: 8px; color: var(--text-main); }
+        
+        .form-input {
+            width: 100%; padding: 14px 16px; border: 1px solid var(--border);
+            border-radius: 8px; font-size: 15px; outline: none; background: var(--bg-light); color: var(--text-main);
+        }
+        .form-input:focus { border-color: var(--primary); }
+
+        /* Options radio/checkbox personnalisées */
+        .checkbox-group {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            margin-top: 10px;
+        }
+        .checkbox-label {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .checkbox-label input {
+            width: 18px; height: 18px; accent-color: var(--primary);
+        }
+
+        /* Boutons de navigation */
+        .form-navigation {
+            display: flex;
+            gap: 15px;
+            margin-top: 35px;
+        }
+        .btn-step {
+            flex: 1; padding: 15px; border-radius: 8px; font-weight: 700; font-size: 16px; cursor: pointer; border: none;
+        }
+        .btn-next { background: var(--primary); color: white; }
+        .btn-next:hover { background: var(--primary-dark); }
+        .btn-prev { background: var(--border); color: var(--text-muted); }
+        .btn-prev:hover { background: #d1d5db; }
+
+        /* --- SUPPORT TECHNIQUE PREMIUM --- */
+        .support-tech{
+            position: fixed;
+            bottom: 30px;
+            right: 45px; 
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #0d6938, #7bc143);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 28px;
+            z-index: 1500;
+            box-shadow: 0 10px 30px rgba(13,105,56,0.35);
+            transition: all 0.3s ease;
+            animation: supportPulse 2.5s infinite;
+        }
+
+        .support-tech:hover{
+            transform: translateY(-5px) scale(1.08);
+            box-shadow: 0 15px 35px rgba(13,105,56,0.5);
+        }
+
+        .support-tech::before{
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: rgba(123,193,67,0.35);
+            animation: ripple 2.5s infinite;
+            z-index: -1;
+        }
+
+        @keyframes supportPulse{
+            0%{ transform: scale(1); }
+            50%{ transform: scale(1.08); }
+            100%{ transform: scale(1); }
+        }
+
+        @keyframes ripple{
+            0%{ transform: scale(1); opacity: 0.8; }
+            100%{ transform: scale(1.8); opacity: 0; }
+        }
+
+        @media (max-width: 950px) {
+            .nav-menu { display: none; }
+            .hero h2 { font-size: 30px; }
+            .stats-container { grid-template-columns: repeat(2, 1fr); }
+            .sectors-clean-layout, .footer-main-grid, .footer-contacts { grid-template-columns: 1fr; gap: 35px; }
+            section { padding: 70px 24px; }
+            .support-tech{ width: 58px; height: 58px; font-size: 24px; right: 20px; bottom: 20px; }
+            
+            /* Responsive Modal */
+            .modal-container { grid-template-columns: 1fr; }
+            .modal-motivation-side { display: none; }
+            .modal-form-side { padding: 40px 24px; }
+            .modal-close-fullscreen { top: 20px; right: 20px; }
+        }
+        .menu-container{
+    position:relative;
+}
+
+.menu-btn{
+    width:48px;
+    height:48px;
+    border:none;
+    border-radius:50%;
+    background:var(--surface);
+    color:var(--primary);
+    font-size:1.2rem;
+    cursor:pointer;
+    border:1px solid var(--border);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.menu-btn:hover{
+    background:var(--primary);
+    color:white;
+}
+
+.main-dropdown{
+    display:none;
+    position:absolute;
+    top:55px;
+    right:0;
+    width:260px;
+    background:var(--surface);
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 10px 30px rgba(0,0,0,0.15);
+    border:1px solid var(--border);
+    z-index:1200;
+}
+
+.main-dropdown.show{
+    display:block;
+}
+
+.main-dropdown a,
+.theme-trigger{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:14px 18px;
+    text-decoration:none;
+    color:var(--text-main);
+    font-weight:600;
+    cursor:pointer;
+}
+
+.main-dropdown a:hover,
+.theme-trigger:hover{
+    background:var(--bg-light);
+    color:var(--primary);
+}
+
+.dropdown-divider{
+    height:1px;
+    background:var(--border);
+    margin:5px 0;
+}
+
+.themes-submenu{
+    display:none;
+    border-top:1px solid var(--border);
+}
+
+.themes-submenu.show{
+    display:block;
+}
+
+.themes-submenu button{
+    width:100%;
+    border:none;
+    background:none;
+    padding:12px 20px;
+    text-align:left;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    color:var(--text-main);
+    font-weight:600;
+}
+
+.themes-submenu button:hover{
+    background:var(--bg-light);
+    color:var(--primary);
+}
+/* ==========================
+HEADER DE CHAQUE ÉTAPE
+========================== */
+.form-header{
+background: linear-gradient(
+135deg,
+var(--primary),
+var(--primary-dark)
+);
+color: white;
+padding: 22px;
+border-radius: 16px;
+margin-bottom: 25px;
+box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+position: relative;
+overflow: hidden;
+}
+
+.form-header::before{
+content:"";
+position:absolute;
+top:-40px;
+right:-40px;
+width:120px;
+height:120px;
+border-radius:50%;
+background:rgba(255,255,255,0.08);
+}
+
+.form-header h3{
+margin:0 0 10px 0;
+color:white;
+font-size:24px;
+font-weight:800;
+line-height:1.3;
+}
+
+.form-header p{
+margin:0;
+font-size:14px;
+line-height:1.8;
+color:rgba(255,255,255,0.92);
+}
+
+/* ==========================
+CHAMPS DU FORMULAIRE
+========================== */
+.form-group{
+margin-bottom:20px;
+}
+
+.form-group label{
+display:block;
+margin-bottom:8px;
+font-size:14px;
+font-weight:700;
+color:var(--text-main);
+}
+
+.form-input{
+width:100%;
+padding:15px 18px;
+border:2px solid var(--border);
+border-radius:12px;
+background:var(--surface);
+color:var(--text-main);
+font-size:15px;
+transition:all .3s ease;
+}
+
+.form-input:focus{
+outline:none;
+border-color:var(--primary);
+box-shadow:0 0 0 4px rgba(13,105,56,0.12);
+transform:translateY(-2px);
+}
+
+/* ==========================
+OPTIONS RADIO
+========================== */
+.checkbox-group{
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+.checkbox-label{
+display:flex;
+align-items:center;
+gap:12px;
+padding:15px;
+background:var(--bg-light);
+border:1px solid var(--border);
+border-radius:12px;
+cursor:pointer;
+transition:all .3s ease;
+}
+
+.checkbox-label:hover{
+border-color:var(--primary);
+background:rgba(13,105,56,0.05);
+transform:translateX(4px);
+}
+
+.checkbox-label input{
+accent-color:var(--primary);
+width:18px;
+height:18px;
+}
+
+/* ==========================
+FOOTER MOTIVATION
+========================== */
+.form-footer{
+margin-top:25px;
+padding:18px;
+background:linear-gradient(
+135deg,
+rgba(13,105,56,0.08),
+rgba(123,193,67,0.08)
+);
+border-left:5px solid var(--accent);
+border-radius:12px;
+font-size:14px;
+line-height:1.8;
+color:var(--text-muted);
+}
+
+.form-footer i{
+color:var(--primary);
+font-size:18px;
+margin-right:8px;
+}
+
+/* ==========================
+MESSAGE DE CONFIDENTIALITÉ
+========================== */
+.info-confidentialite{
+margin-top:20px;
+padding:15px;
+text-align:center;
+background:var(--bg-light);
+border:1px solid var(--border);
+border-radius:12px;
+font-size:13px;
+font-weight:600;
+color:var(--text-muted);
+}
+
+/* ==========================
+BARRE DE PROGRESSION
+========================== */
+.step-progress-bar{
+display:flex;
+gap:8px;
+margin-bottom:30px;
+}
+
+.progress-dot{
+flex:1;
+height:8px;
+border-radius:20px;
+background:var(--border);
+transition:all .4s ease;
+}
+
+.progress-dot.active{
+background:linear-gradient(
+90deg,
+var(--primary),
+var(--accent)
+);
+box-shadow:0 0 10px rgba(13,105,56,0.25);
+}
+
+/* ==========================
+BOUTONS
+========================== */
+.form-navigation{
+display:flex;
+gap:15px;
+margin-top:30px;
+}
+
+.btn-step{
+flex:1;
+padding:16px;
+border:none;
+border-radius:12px;
+font-size:15px;
+font-weight:700;
+cursor:pointer;
+transition:all .3s ease;
+}
+
+.btn-prev{
+background:#e5e7eb;
+color:#374151;
+}
+
+.btn-prev:hover{
+transform:translateY(-2px);
+}
+
+.btn-next{
+background:linear-gradient(
+135deg,
+var(--primary),
+var(--primary-dark)
+);
+color:white;
+box-shadow:0 8px 20px rgba(13,105,56,0.25);
+}
+
+.btn-next:hover{
+transform:translateY(-3px);
+box-shadow:0 12px 25px rgba(13,105,56,0.35);
+}
+
+/* ==========================
+CARTE FORMULAIRE
+========================== */
+.modal-form-side{
+background:var(--surface);
+padding:50px;
+position:relative;
+}
+
+.modal-form-side form{
+max-width:650px;
+margin:auto;
+}
+
+/* ==========================
+RESPONSIVE
+========================== */
+@media(max-width:768px){
+
+.modal-form-side{
+    padding:25px;
+}
+
+.form-header h3{
+    font-size:20px;
+}
+
+.form-navigation{
+    flex-direction:column;
+}
+
+.btn-step{
+    width:100%;
+}
+
+}
+.stat-card {
+    display: block;
+    text-decoration: none;
+    color: #000;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+/* classe déclencheur */
+.stat-card.animate {
+    animation: fadeUp 0.6s ease forwards;
+}
+
+.stat-card:hover {
+    transform: translateY(-2px);
+    border-color: #aaa;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.hero h2,
+.hero p,
+.btn-main-action {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+/* animation active */
+.hero.animate h2 {
+    animation: fadeUp 0.8s ease forwards;
+}
+
+.hero.animate p {
+    animation: fadeUp 0.8s ease forwards;
+    animation-delay: 0.2s;
+}
+
+.hero.animate .btn-main-action {
+    animation: fadeUp 0.8s ease forwards;
+    animation-delay: 0.4s;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.video-container {
+    position: relative;
+    width: 100%;
+    max-height: 500px;
+    overflow: hidden;
+}
+
+.video-container video {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.video-controls {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    display: flex;
+    gap: 10px;
+}
+
+.video-controls button {
+    padding: 8px 12px;
+    border: none;
+    cursor: pointer;
+    background: rgba(0,0,0,0.6);
+    color: white;
+    border-radius: 5px;
+}.video-container {
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+}
+
+.video-container video {
+    width: 100%;
+    display: block;
+    border-radius: 10px;
+    background: black;
+}
+.impact-section{
+    padding: 100px 10%;
+    background: var(--bg-light);
+}
+
+.impact-header{
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.impact-header h2{
+    font-size: 40px;
+    font-weight: 900;
+    color: var(--primary-dark);
+}
+
+.impact-header p{
+    margin-top: 10px;
+    color: var(--text-muted);
+    font-size: 16px;
+}
+
+/* GRID */
+.impact-grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+/* CARD PREMIUM */
+.impact-card{
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+}
+
+/* TOP HEADER */
+.impact-top{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.impact-top i{
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+    background: rgba(13,105,56,0.08);
+    color: var(--primary);
+    font-size: 18px;
+}
+
+.impact-top h3{
+    font-size: 17px;
+    font-weight: 800;
+    color: var(--primary-dark);
+}
+
+/* TEXTE LONG */
+.impact-card p{
+    font-size: 14.5px;
+    color: var(--text-muted);
+    line-height: 1.7;
+}
+
+/* BOUTON */
+.impact-btn{
+    align-self: flex-start;
+
+    text-decoration: none;
+    padding: 10px 18px;
+    border-radius: 10px;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    background: var(--primary);
+    color: white;
+
+    transition: 0.25s ease;
+}
+
+.impact-btn:hover{
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+/* HOVER PREMIUM */
+.impact-card:hover{
+    transform: translateY(-6px);
+    border-color: var(--primary);
+    box-shadow: 0 18px 40px rgba(0,0,0,0.10);
+}
+
+/* RESPONSIVE */
+@media (max-width: 800px){
+    .impact-grid{
+        grid-template-columns: 1fr;
+    }
+}
+    </style>
+</head>
+<body>
+
+    <!-- BARRE DE NAVIGATION VITRINE -->
+    <nav class="navbar">
+        <div class="nav-logo">
+            <div class="logo-container">
+                <img src="logo.jpg" alt="Logo Officiel F.J.E.R.E." onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="logo-fallback" style="display:none;"><i class="fas fa-feather-alt"></i></div>
+            </div>
+            <div class="nav-title">
+                <h1>F.J.E.R.E. ONGD</h1>
+                <span>RÉUSSIR ENSEMBLE</span>
+            </div>
+        </div>
+        
+        <div class="nav-right-container">
+            <ul class="nav-menu">
+                <li><a href="#presentation">Qui sommes-nous ?</a></li>
+                <li><a href="#mission">Missions &amp; Vision</a></li>
+                <li><a href="#secteurs">Interventions</a></li>
+                <li><a class="btn-nav-join" onclick="ouvrirModal()">S'inscrire</a></li>
+            </ul>
+
+            <!-- Commutateur à 7 thèmes -->
+            <div class="menu-container">
+    <button class="menu-btn" onclick="toggleMainMenu()">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Menu déroulant global -->
+    <div class="main-dropdown" id="mainDropdown">
+
+        <a href="#accueil">
+            <i class="fas fa-home"></i>
+            Accueil
+        </a>
+
+        <a href="#missions">
+            <i class="fas fa-bullseye"></i>
+            Nos objectifs
+        </a>
+
+        <a href="#apropos">
+            <i class="fas fa-info-circle"></i>
+            À propos de nous
+        </a>
+
+        <a href="#contact">
+            <i class="fas fa-envelope"></i>
+            Contact
+        </a>
+
+        <div class="dropdown-divider"></div>
+
+        <div class="theme-trigger" onclick="toggleThemesSubmenu(event)">
+            <i class="fas fa-palette"></i>
+            Changer le thème
+            <i class="fas fa-chevron-down" style="margin-left:auto;"></i>
+        </div>
+
+        <div class="themes-submenu" id="themesSubmenu">
+            <button onclick="setTheme('default')">
+                <i class="fas fa-leaf"></i> Vert Standard
+            </button>
+
+            <button onclick="setTheme('dark')">
+                <i class="fas fa-moon"></i> Mode Sombre
+            </button>
+
+            <button onclick="setTheme('light')">
+                <i class="fas fa-sun"></i> Mode Clair
+            </button>
+
+            <button onclick="setTheme('ocean')">
+                <i class="fas fa-water"></i> Bleu Océan
+            </button>
+
+            <button onclick="setTheme('orange')">
+                <i class="fas fa-fire"></i> Orange Énergie
+            </button>
+
+            <button onclick="setTheme('purple')">
+                <i class="fas fa-wand-magic-sparkles"></i> Améthyste
+            </button>
+
+            <button onclick="setTheme('forest')">
+                <i class="fas fa-tree"></i> Vert Forêt
+            </button>
+        </div>
+
+    </div>
+</div>
+    </nav>
+
+<header class="hero">
+<h2>
+    Ensemble, éveillons les talents, formons, accompagnons et promouvons le changement.  
+    Chacun apporte son morceau de bois afin que le feu s’allume.
+</h2>
+<p>« Agir aujourd'hui pour construire un avenir meilleur » — F.J.E.R.E. ONGD-ASBL</p>
+<button class="btn-main-action" onclick="window.location.href='domaine.html'">
+    Rejoindre le mouvement
+</button>
+    </header>
+
+<div class="video-container">
+    <video controls preload="metadata" playsinline>
+        <source src="video.mp4" type="video/mp4">
+        Votre navigateur ne supporte pas la vidéo.
+    </video>
+</div>
+<section class="impact-section">
+
+    <div class="impact-header">
+        <h2>Notre impact</h2>
+        <p>Des actions concrètes pour former, accompagner et transformer les communautés</p>
+    </div>
+
+    <div class="impact-grid">
+
+        <div class="impact-card">
+            <div class="impact-top">
+                <i class="fa-solid fa-microphone"></i>
+                <h3>Conférences organisées</h3>
+            </div>
+
+            <p>
+                Nous organisons des conférences de sensibilisation et de formation afin d’éveiller les jeunes,
+                renforcer leur leadership et encourager leur engagement dans le changement social.
+            </p>
+
+            <a href="conferences.html" class="impact-btn">Accéder</a>
+        </div>
+
+        <div class="impact-card">
+            <div class="impact-top">
+                <i class="fa-solid fa-users"></i>
+                <h3>+1000 jeunes éveillés</h3>
+            </div>
+
+            <p>
+                Plus de 1000 jeunes ont été touchés par nos programmes d’éveil, de formation et d’accompagnement
+                vers une vision plus responsable et engagée.
+            </p>
+
+            <a href="jeunes.html" class="impact-btn">Accéder</a>
+        </div>
+
+        <div class="impact-card">
+            <div class="impact-top">
+                <i class="fa-solid fa-hands-holding-child"></i>
+                <h3>+25 vulnérabilités assistées</h3>
+            </div>
+
+            <p>
+                Nous accompagnons les personnes vulnérables à travers des actions humanitaires,
+                sociales et des programmes de soutien communautaire.
+            </p>
+
+            <a href="vulnerabilite.html" class="impact-btn">Accéder</a>
+        </div>
+
+        <div class="impact-card">
+            <div class="impact-top">
+                <i class="fa-solid fa-certificate"></i>
+                <h3>+125 métiers certifiés</h3>
+            </div>
+
+            <p>
+                Nous formons et certifions des jeunes dans différents métiers pour favoriser leur insertion
+                professionnelle et leur autonomie économique.
+            </p>
+
+            <a href="metiers.html" class="impact-btn">Accéder</a>
+        </div>
+
+    </div>
+
+</section>
+    <!-- SECTION PRÉSENTATION LINÉAIRE -->
+    <section id="presentation">
+        <h2 class="section-title">Présentation &amp; Origine</h2>
+        <div class="presentation-center-layout">
+            <p class="history-text">
+                Créée le <strong>2 août 2018</strong> à Lubumbashi, au sein de la Province du Haut-Katanga (RDC), la <strong>Force des Jeunes Entrepreneurs Réussir Ensemble (F.J.E.R.E.)</strong> a structuré ses premières démarches de terrain dès le 19 décembre 2021. En tant qu'Organisation Non Gouvernementale de Développement sans but lucratif, elle concentre toutes ses compétences dans l'accompagnement, l'instruction civique et l'encadrement entrepreneurial des femmes et de la jeunesse congolaise.
+            </p>
+            
+            <div style="text-align: center; margin-top: 35px;">
+                <h4 style="font-size: 13px; text-transform: uppercase; color: var(--text-muted); letter-spacing: 1.2px; font-weight: 700;">Nos Valeurs Cardinales</h4>
+                <ul class="values-list-inline">
+                    <li><i class="fas fa-heart"></i> L'amour &amp; l'unité</li>
+                    <li><i class="fas fa-shield-halved"></i> La discipline &amp; le respect</li>
+                    <li><i class="fas fa-users"></i> La responsabilité sociétale</li>
+                    <li><i class="fas fa-gavel"></i> La bonne gouvernance</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION MISSION -->
+    <section id="mission" style="background-color: var(--surface); max-width: 100%;">
+        <h2 class="section-title">Notre Vision d'Impact</h2>
+        <div class="ordered-text-flow">
+            <div class="main-objective-box">
+                <h3>Objectif Général</h3>
+                <p>
+                    « Promouvoir activement la jeunesse congolaise par la fédération de citoyens leaders, porteurs d'idées neuves, de projets de société constructifs et de schémas de développement durable via l'entrepreneuriat sous toutes ses formes »
+                </p>
+            </div>
+
+            <div class="sub-objectives-container">
+                <h3>Objectifs Spécifiques</h3>
+                <ul class="vertical-text-list">
+                    <li>
+                        <div class="list-number">01</div>
+                        <div class="list-content">Éveiller durablement les consciences par des canaux de formation de proximité de qualité.</div>
+                    </li>
+                    <li>
+                        <div class="list-number">02</div>
+                        <div class="list-content">Encadrer, guider et assurer la promotion continue des groupes cibles de l'organisation.</div>
+                    </li>
+                    <li>
+                        <div class="list-number">03</div>
+                        <div class="list-content">Initier les jeunes et les femmes à l'autonomie financière par l'entrepreneuriat et les métiers.</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTEURS D'INTERVENTION -->
+    <section id="secteurs">
+        <h2 class="section-title">Domaines Majeurs d'Action</h2>
+        <div class="sectors-clean-layout">
+            <div class="sector-clean-item">
+                <div class="sector-icon-wrap"><i class="fas fa-seedling"></i></div>
+                <h4>Agriculture &amp; Élevage</h4>
+                <p>Modernisation des cultures et encadrement agro-pastoral pour l'autosuffisance alimentaire en milieux ruraux.</p>
+            </div>
+            <div class="sector-clean-item">
+                <div class="sector-icon-wrap"><i class="fas fa-hand-holding-heart"></i></div>
+                <h4>Droits &amp; Citoyenneté</h4>
+                <p>Vulgarisation des textes légaux, éducation civique active et lutte contre toutes les formes d'exploitation des jeunes.</p>
+            </div>
+            <div class="sector-clean-item">
+                <div class="sector-icon-wrap"><i class="fas fa-graduation-cap"></i></div>
+                <h4>Formations Pratiques</h4>
+                <p>Programmes courts de renforcement de compétences et clés d'insertion professionnelle pour les structures locales.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SUPPORT TECHNIQUE FLOATING -->
+    <a href="support.html" class="support-tech" target="_blank" title="Support WhatsApp">
+        <i class="fas fa-headset"></i>
+    </a>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-main-grid">
+            <div style="max-width: 500px;">
+                <h4 style="margin-bottom: 15px;">F.J.E.R.E. ONGD-ASBL</h4>
+                <p style="color: #9ca3af; font-size: 14.5px;">Force des Jeunes Entrepreneurs Réussir Ensemble. Structure d'encadrement, d'autonomisation et de structuration de projets d'avenir pour l'épanouissement global de la jeunesse.</p>
+            </div>
+            <ul class="footer-contacts">
+                <li><i class="fas fa-map-marker-alt"></i> Av Chemin Publique, N°3345 Q/Gambella II, C/Lubumbashi, RDC.</li>
+                <li><i class="fas fa-envelope"></i> forcedesjeunesentrepreneurs@gmail.com</li>
+                <li><i class="fas fa-phone"></i> +243 97 89 10 379</li>
+                <li><i class="fas fa-phone"></i> +243 81 07 46 421</li>
+            </ul>
+        </div>
+        <div style="text-align: center; color: #6b7280; font-size: 14px;">
+            <p>&copy; 2026 F.J.E.R.E. ONGD-ASBL. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <!-- POPUP MODAL PLEIN ÉCRAN REJOINDRE -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-container">
+            
+            <!-- Côté motivation -->
+            <div class="modal-motivation-side">
+                <h2>Votre potentiel est notre force.</h2>
+                <p>Rejoindre la F.J.E.R.E., c'est faire le choix d'agir, d'entreprendre et de bâtir activement l'avenir de la communauté. Remplissez ce formulaire et commencez votre parcours de leader dès aujourd'hui !</p>
+            </div>
+            <!-- CÔTÉ FORMULAIRE MULTI-ÉTAPES --><div class="modal-form-side"><button class="modal-close-fullscreen" onclick="fermerModal()">&times;</button>
+<script>
+/* ==========================
+   GESTION DES THÈMES
+========================== */
+function setTheme(themeName) {
+
+    if (themeName === "default") {
+        document.documentElement.removeAttribute("data-theme");
+    } else {
+        document.documentElement.setAttribute("data-theme", themeName);
+    }
+
+    localStorage.setItem("themeFJE", themeName);
+
+    document.getElementById("mainDropdown").classList.remove("show");
+    document.getElementById("themesSubmenu").classList.remove("show");
+}
+
+const themeSauvegarde = localStorage.getItem("themeFJE");
+
+if (themeSauvegarde) {
+    if (themeSauvegarde === "default") {
+        document.documentElement.removeAttribute("data-theme");
+    } else {
+        document.documentElement.setAttribute("data-theme", themeSauvegarde);
+    }
+}
+
+/* ==========================
+   FORMULAIRE MULTI-ÉTAPES
+========================== */
+let etapeActuelle = 0;
+
+const etapes = document.querySelectorAll(".form-step");
+const points = document.querySelectorAll(".progress-dot");
+const btnPrev = document.getElementById("btnPrev");
+const btnNext = document.getElementById("btnNext");
+
+function ouvrirModal() {
+
+    if (localStorage.getItem("fje_inscription") === "oui") {
+        window.location.href = "domaine.html";
+        return;
+    }
+
+    document.getElementById("modalOverlay").style.display = "block";
+    document.body.style.overflow = "hidden";
+
+    afficherEtape(etapeActuelle);
+}
+
+function fermerModal() {
+    document.getElementById("modalOverlay").style.display = "none";
+    document.body.style.overflow = "auto";
+}
+
+function afficherEtape(n) {
+
+    etapes.forEach((etape, index) => {
+        etape.classList.toggle("active", index === n);
+    });
+
+    points.forEach((point, index) => {
+        point.classList.toggle("active", index <= n);
+    });
+
+    btnPrev.style.display = (n === 0) ? "none" : "inline-block";
+
+    if (n === etapes.length - 1) {
+        btnNext.innerText = "Valider et Rejoindre";
+        btnNext.type = "submit";
+    } else {
+        btnNext.innerText = "Suivant";
+        btnNext.type = "button";
+    }
+}
+
+function changerEtape(direction) {
+
+    if (direction === 1) {
+
+        const champsRequis =
+            etapes[etapeActuelle].querySelectorAll("[required]");
+
+        let valide = true;
+
+        champsRequis.forEach(champ => {
+
+            if (!champ.checkValidity()) {
+                champ.reportValidity();
+                valide = false;
+            }
+
+        });
+
+        if (!valide) return;
+    }
+
+    etapeActuelle += direction;
+
+    if (etapeActuelle < 0) {
+        etapeActuelle = 0;
+    }
+
+    if (etapeActuelle >= etapes.length) {
+        etapeActuelle = etapes.length - 1;
+    }
+
+    afficherEtape(etapeActuelle);
+}
+
+function soumettreFormulaire(event) {
+
+    event.preventDefault();
+
+    const nom = document.getElementById("nom").value;
+    const postnom = document.getElementById("postnom").value;
+    const prenom = document.getElementById("prenom").value;
+    const dateNaissance = document.getElementById("date_naissance").value;
+    const lieuNaissance = document.getElementById("lieu_naissance").value;
+    const etatCivil = document.getElementById("etat_civil").value;
+    const nationalite = document.getElementById("nationalite").value;
+    const niveauEtudes = document.getElementById("niveau_etudes").value;
+    const domaineEtudes = document.getElementById("domaine_etudes").value;
+    const adresse = document.getElementById("adresse").value;
+    const contact = document.getElementById("contact").value;
+    const statut =
+        document.querySelector('input[name="statut_fje"]:checked').value;
+    const motivations =
+        document.getElementById("motivations").value;
+
+    const sujet =
+        `Nouvelle inscription FJE : ${prenom} ${nom}`;
+
+    const corpsMessage =
+`Bonjour,
+
+Voici les informations d'un nouveau membre :
+
+Nom : ${nom}
+Postnom : ${postnom}
+Prénom : ${prenom}
+Date de naissance : ${dateNaissance}
+Lieu de naissance : ${lieuNaissance}
+État civil : ${etatCivil}
+Nationalité : ${nationalite}
+Niveau d'études : ${niveauEtudes}
+Domaine d'études : ${domaineEtudes}
+Adresse : ${adresse}
+Contact : ${contact}
+Statut souhaité : ${statut}
+
+Motivations :
+${motivations}`;
+
+    const destinataire = "bitangalovictoire@gmail.com";
+
+    localStorage.setItem("fje_inscription", "oui");
+
+    window.location.href =
+        `mailto:${destinataire}?subject=${encodeURIComponent(sujet)}&body=${encodeURIComponent(corpsMessage)}`;
+
+    fermerModal();
+
+    setTimeout(() => {
+
+        document.getElementById("multiStepForm").reset();
+
+        etapeActuelle = 0;
+
+        window.location.href = "domaine.html";
+
+    }, 1000);
+}
+
+/* ==========================
+   MENU PRINCIPAL
+========================== */
+function toggleMainMenu() {
+
+    document
+        .getElementById("mainDropdown")
+        .classList.toggle("show");
+}
+
+function toggleThemesSubmenu(event) {
+
+    event.stopPropagation();
+
+    document
+        .getElementById("themesSubmenu")
+        .classList.toggle("show");
+}
+
+/* ==========================
+   FERMETURE MENUS AU CLIC
+========================== */
+document.addEventListener("click", function(e) {
+
+    if (!e.target.closest(".menu-container")) {
+
+        document
+            .getElementById("mainDropdown")
+            .classList.remove("show");
+
+        document
+            .getElementById("themesSubmenu")
+            .classList.remove("show");
+    }
+});
+const cards = document.querySelectorAll(".stat-card");
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+
+            const card = entry.target;
+
+            // reset pour permettre replay
+            card.classList.remove("animate");
+            void card.offsetWidth; // force reflow
+
+            card.classList.add("animate");
+        }
+    });
+}, {
+    threshold: 0.2
+});
+
+cards.forEach(card => observer.observe(card));
+document.addEventListener("DOMContentLoaded", () => {
+    document.querySelector(".hero").classList.add("animate");
+});
+const video = document.getElementById("bgVideo");
+
+function togglePlay() {
+    const btn = document.getElementById("playBtn");
+
+    if (video.paused) {
+        video.play();
+        btn.textContent = "⏸ Pause";
+    } else {
+        video.pause();
+        btn.textContent = "▶ Lecture";
+    }
+}
+
+function toggleMute() {
+    const btn = document.getElementById("muteBtn");
+
+    video.muted = !video.muted;
+
+    btn.textContent = video.muted ? "🔇 Muet" : "🔊 Son";
+}
+</script>
+</body>
+</html>
