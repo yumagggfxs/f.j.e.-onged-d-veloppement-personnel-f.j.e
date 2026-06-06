@@ -1,0 +1,1109 @@
+<!DOCTYPE html>  
+<html lang="fr">  
+<head>  
+<link rel="shortcut icon" href="logo.png" type="image/png">
+<meta property="og:title" content="F.J.E.R.E. ONGD - Réussir Ensemble">
+<meta property="og:description" content="Plateforme de développement, éducation et transformation sociale de la F.J.E.R.E.">
+<meta property="og:image" content="https://f-j-e-onged-victoir-eloppement-pers.vercel.app/logo.png">
+<meta property="og:url" content="https://f-j-e-onged-victoir-eloppement-pers.vercel.app/">
+<meta property="og:type" content="website">
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Nos Domaines d'Intervention - F.J.E.R.E ONGD-ASBL</title>  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">  
+    <style>  
+        /* --- CONFIGURATION DES THÈMES --- */
+        :root {  
+            --primary: #0d6938;       
+            --primary-dark: #074623;  
+            --accent: #7bc143;        
+            --accent-gold: #cca43b;   
+            --bg-light: #ffffff;      
+            --surface: #ffffff;
+            --text-main: #111827;     
+            --text-muted: #4b5563;  
+            --border: #f3f4f6;  
+            --nav-bg: rgba(255, 255, 255, 0.98);
+        }  
+
+        [data-theme="dark"] {
+            --primary: #10b981;       
+            --primary-dark: #047857;  
+            --accent: #34d399;        
+            --accent-gold: #fbbf24;   
+            --bg-light: #111827;      
+            --surface: #1f2937;
+            --text-main: #f9fafb;     
+            --text-muted: #9ca3af;  
+            --border: #374151;  
+            --nav-bg: rgba(17, 24, 39, 0.98);
+        }
+
+        [data-theme="light"] {
+            --primary: #2563eb;       
+            --primary-dark: #1d4ed8;  
+            --accent: #60a5fa;        
+            --accent-gold: #d97706;   
+            --bg-light: #f9fafb;      
+            --surface: #ffffff;
+            --text-main: #1f2937;     
+            --text-muted: #4b5563;  
+            --border: #e5e7eb;  
+            --nav-bg: rgba(255, 255, 255, 0.98);
+        }
+
+        [data-theme="ocean"] {
+            --primary: #0284c7;       
+            --primary-dark: #0369a1;  
+            --accent: #38bdf8;        
+            --accent-gold: #f59e0b;   
+            --bg-light: #f0f9ff;      
+            --surface: #ffffff;
+            --text-main: #0c4a6e;     
+            --text-muted: #334155;  
+            --border: #e0f2fe;  
+            --nav-bg: rgba(240, 249, 255, 0.98);
+        }
+
+        [data-theme="orange"] {
+            --primary: #ea580c;       
+            --primary-dark: #c2410c;  
+            --accent: #f97316;        
+            --accent-gold: #b45309;   
+            --bg-light: #fff7ed;      
+            --surface: #ffffff;
+            --text-main: #431407;     
+            --text-muted: #7c2d12;  
+            --border: #ffedd5;  
+            --nav-bg: rgba(255, 247, 237, 0.98);
+        }
+
+        [data-theme="purple"] {
+            --primary: #7c3aed;       
+            --primary-dark: #6d28d9;  
+            --accent: #a78bfa;        
+            --accent-gold: #db2777;   
+            --bg-light: #faf5ff;      
+            --surface: #ffffff;
+            --text-main: #3b0764;     
+            --text-muted: #581c87;  
+            --border: #f3e8ff;  
+            --nav-bg: rgba(250, 245, 255, 0.98);
+        }
+
+        [data-theme="forest"] {
+            --primary: #15803d;       
+            --primary-dark: #14532d;  
+            --accent: #4ade80;        
+            --accent-gold: #eab308;   
+            --bg-light: #f0fdf4;      
+            --surface: #ffffff;
+            --text-main: #14532d;     
+            --text-muted: #166534;  
+            --border: #dcfce7;  
+            --nav-bg: rgba(240, 253, 244, 0.98);
+        }
+
+        * { 
+            box-sizing: border-box; 
+            margin: 0; 
+            padding: 0; 
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }  
+
+        body { 
+            background-color: var(--bg-light); 
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }  
+
+        /* --- BARRE DE NAVIGATION --- */  
+        .navbar {  
+            position: fixed;  
+            top: 0; left: 0; width: 100%;  
+            background: var(--nav-bg);  
+            backdrop-filter: blur(10px);  
+            border-bottom: 1px solid var(--border);  
+            display: flex;  
+            justify-content: space-between;  
+            align-items: center;  
+            padding: 16px 8%;  
+            z-index: 1000;  
+        }  
+
+        .nav-logo { display: flex; align-items: center; gap: 14px; }  
+        
+        .logo-container { 
+            height: 52px; 
+            width: 52px; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            border-radius: 50%; 
+            overflow: hidden; 
+            background-color: #ffffff; 
+            box-shadow: 0 2px 8px rgba(0,0,0,0.12); 
+            border: 2px solid var(--primary);
+        }  
+        .logo-container img { height: 100%; width: 100%; object-fit: cover; }  
+
+        .nav-title h1 { font-size: 19px; color: var(--primary-dark); font-weight: 800; line-height: 1.1; }  
+        .nav-title span { font-size: 10.5px; color: var(--primary); display: block; letter-spacing: 1.8px; font-weight: 700; margin-top: 2px; }  
+        
+        .nav-right-container {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        /* --- BOUTON MENU UNIQUE --- */
+        .menu-toggle-btn {
+            background: none;
+            border: 1px solid var(--border);
+            color: var(--text-main);
+            padding: 12px;
+            font-size: 1.3rem;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--surface);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .menu-toggle-btn:hover {
+            color: var(--primary);
+            border-color: var(--primary);
+        }
+
+        /* --- MENU DEROULANT PRINCIPAL --- */
+        .main-dropdown {
+            display: none;
+            position: absolute;
+            right: 8%;
+            top: 80px;
+            background-color: var(--surface);
+            min-width: 260px;
+            box-shadow: 0px 10px 30px rgba(0,0,0,0.15);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            z-index: 1100;
+            overflow: hidden;
+            padding: 10px 0;
+        }
+
+        .main-dropdown.show { display: block; }
+
+        .main-dropdown a, .main-dropdown .theme-trigger {
+            color: var(--text-main);
+            padding: 12px 20px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .main-dropdown a:hover, .main-dropdown .theme-trigger:hover {
+            background-color: var(--border);
+            color: var(--primary);
+        }
+
+        .dropdown-divider {
+            height: 1px;
+            background-color: var(--border);
+            margin: 8px 0;
+        }
+
+        /* --- SOUS-MENU DES THEMES --- */
+        .themes-submenu {
+            display: none;
+            background-color: var(--bg-light);
+            padding: 5px 0;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .themes-submenu.show { display: block; }
+
+        .themes-submenu button {
+            color: var(--text-main);
+            padding: 10px 20px 10px 45px;
+            border: none;
+            background: none;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-align: left;
+        }
+
+        .themes-submenu button:hover {
+            background-color: var(--border);
+            color: var(--primary);
+        }
+
+        /* ===== SLIDER CORRIGÉ (430px de hauteur pour matcher les domaines) ===== */
+        .slider-container{
+            margin-top:84px;
+            position:relative;
+            width:100%;
+            height:430px; 
+            overflow:hidden;
+            border-radius:0 0 18px 18px;
+            box-shadow:0 6px 20px rgba(0,0,0,.12);
+        }
+
+        .slide{
+            position:absolute;
+            top:0;
+            left:0;
+            width:100%;
+            height:100%;
+            opacity:0;
+            transition:opacity .8s ease;
+        }
+
+        .slide.active{
+            opacity:1;
+            z-index:2;
+        }
+
+        .slide img{
+            width:100%;
+            height:100%;
+            object-fit:cover;
+            display:block;
+        }
+
+        /* Boutons du Slider */
+        .slider-btn{
+            position:absolute;
+            top:50%;
+            transform:translateY(-50%);
+            width:42px;
+            height:42px;
+            border:none;
+            border-radius:50%;
+            background:rgba(255,255,255,.75);
+            color:#222;
+            cursor:pointer;
+            z-index:10;
+            font-size:16px;
+            transition:.3s;
+        }
+
+        .slider-btn:hover{
+            background:white;
+            transform:translateY(-50%) scale(1.08);
+        }
+
+        .slider-btn-prev{ left:15px; }
+        .slider-btn-next{ right:15px; }
+
+        /* --- EN-TÊTE DE SECTION --- */  
+        .section-title { text-align: center; padding: 90px 20px 50px 20px; }
+        .section-title h2 { font-size: 2.6rem; color: var(--primary-dark); font-weight: 900; text-transform: uppercase; letter-spacing: -0.5px; }
+        .section-title p { color: var(--text-muted); margin-top: 12px; max-width: 750px; margin-left: auto; margin-right: auto; font-size: 1.15rem; font-weight: 300; }
+
+        /* --- BLOCS DOMAINES --- */  
+        .domain-section { width: 100%; margin-bottom: 40px; }
+        .domain-full-image { width: 100%; height: 430px; overflow: hidden; }
+        .domain-full-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .domain-body { max-width: 850px; margin: 0 auto; padding: 50px 24px 60px 24px; text-align: left; }
+        .domain-tag { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2.5px; color: var(--accent-gold); font-weight: 800; margin-bottom: 12px; display: block; }
+        .domain-body h3 { font-size: 2.3rem; color: var(--primary-dark); font-weight: 800; margin-bottom: 25px; letter-spacing: -0.5px; }
+        .domain-lead { font-size: 1.3rem; font-weight: 700; color: var(--text-main); line-height: 1.5; margin-bottom: 18px; }
+        .domain-text { color: var(--text-muted); font-size: 1.1rem; line-height: 1.8; margin-bottom: 18px; text-align: justify; }
+        .domain-highlight { font-size: 1.05rem; font-style: italic; color: var(--primary); border-left: 3px solid var(--accent); padding-left: 15px; margin-bottom: 25px; line-height: 1.6; }
+        
+        .btn-learn-more { text-decoration: none; color: var(--primary); font-weight: 700; font-size: 1.05rem; display: inline-flex; align-items: center; gap: 12px; }
+        .btn-learn-more i { transition: transform 0.3s ease; }
+        .btn-learn-more:hover { color: var(--accent-gold); }
+        .btn-learn-more:hover i { transform: translateX(6px); }
+
+        /* --- SUPPORT TECHNIQUE FLOOTTANT --- */
+        .support-tech {
+            position: fixed;
+            bottom: 30px; right: 45px; 
+            width: 65px; height: 65px; border-radius: 50%;
+            background: linear-gradient(135deg, #0d6938, #7bc143); color: #fff;
+            display: flex; align-items: center; justify-content: center;
+            text-decoration: none; font-size: 28px; z-index: 9999;
+            box-shadow: 0 10px 30px rgba(13,105,56,0.35);
+            animation: supportPulse 2.5s infinite;
+        }
+        .support-tech:hover { transform: translateY(-5px) scale(1.08); box-shadow: 0 15px 35px rgba(13,105,56,0.5); }
+        .support-tech::before { content: ""; position: absolute; width: 100%; height: 100%; border-radius: 50%; background: rgba(123,193,67,0.35); animation: ripple 2.5s infinite; z-index: -1; }
+
+        @keyframes supportPulse { 0% { transform: scale(1); } 50% { transform: scale(1.08); } 100% { transform: scale(1); } }
+        @keyframes ripple { 0% { transform: scale(1); opacity: 0.8; } 100% { transform: scale(1.8); opacity: 0; } }
+
+        /* --- FOOTER --- */  
+        footer { background: #090f0c; color: #e5e7eb; padding: 80px 8% 30px 8%; border-top: 3px solid var(--primary); }
+        .footer-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 50px; padding-bottom: 40px; border-bottom: 1px solid #18221c; }
+        .footer-col h4 { color: white; font-size: 1.15rem; margin-bottom: 22px; font-weight: 700; position: relative; padding-bottom: 8px; }
+        .footer-col h4::after { content: ''; position: absolute; bottom: 0; left: 0; width: 35px; height: 3px; background: var(--accent); }
+        .footer-col p { font-size: 0.9rem; color: #9ca3af; margin-bottom: 12px; }
+        .footer-links { list-style: none; }
+        .footer-links li { margin-bottom: 12px; }
+        .footer-links a { text-decoration: none; color: #9ca3af; font-size: 0.9rem; }
+        .footer-links a:hover { color: white; }
+        .footer-contact li { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 14px; font-size: 0.9rem; color: #9ca3af; }
+        .footer-contact i { color: var(--accent); margin-top: 4px; }
+        .footer-bottom { max-width: 1200px; margin: 0 auto; padding-top: 30px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; font-size: 0.85rem; color: #6b7280; }
+        .creator-tag a { color: var(--accent-gold); text-decoration: none; font-weight: 600; }
+        .creator-tag a:hover { text-decoration: underline; }
+
+        /* RESPONSIVE DESIGN */
+        @media (max-width: 950px) {  
+            .slider-container { height: 280px; }
+            .domain-full-image { height: 280px; }
+            .domain-body h3 { font-size: 1.8rem; }
+            .footer-bottom { flex-direction: column; text-align: center; }
+            .support-tech { width: 58px; height: 58px; font-size: 24px; right: 20px; bottom: 20px; }
+            .main-dropdown { right: 5%; width: 90%; max-width: 300px; }
+        }
+        @media(max-width:768px){
+            .slider-container{ height:280px; }
+            .slider-btn{ width:36px; height:36px; font-size:14px; }
+        }
+        .section-badge{
+    display:inline-block;
+    background:rgba(13,105,56,.1);
+    color:var(--primary);
+    padding:10px 20px;
+    border-radius:30px;
+    font-size:.85rem;
+    font-weight:800;
+    letter-spacing:2px;
+    margin-bottom:20px;
+}
+
+.section-title{
+    text-align:center;
+    padding:80px 20px 50px;
+}
+
+.section-title h2{
+    font-size:3rem;
+    font-weight:900;
+    color:var(--primary-dark);
+    margin-bottom:15px;
+}
+
+.section-title p{
+    max-width:850px;
+    margin:auto;
+    color:var(--text-muted);
+    font-size:1.15rem;
+    line-height:1.8;
+}
+
+.domain-body{
+    max-width:900px;
+    margin:auto;
+    padding:60px 25px;
+}
+
+.domain-tag{
+    color:var(--accent-gold);
+    font-size:.85rem;
+    font-weight:800;
+    letter-spacing:3px;
+    display:block;
+    margin-bottom:15px;
+}
+
+.domain-body h3{
+    font-size:2.4rem;
+    color:var(--primary-dark);
+    margin-bottom:25px;
+    font-weight:900;
+}
+
+.domain-lead{
+    font-size:1.3rem;
+    font-weight:700;
+    line-height:1.7;
+    margin-bottom:20px;
+}
+
+.domain-text{
+    font-size:1.1rem;
+    color:var(--text-muted);
+    line-height:1.9;
+    text-align:justify;
+    margin-bottom:20px;
+}
+
+.domain-highlight{
+    background:rgba(13,105,56,.06);
+    border-left:5px solid var(--accent);
+    padding:18px 20px;
+    border-radius:10px;
+    font-style:italic;
+    line-height:1.8;
+    margin-bottom:25px;
+}
+
+.btn-learn-more{
+    display:inline-flex;
+    align-items:center;
+    gap:12px;
+    padding:14px 25px;
+    border-radius:40px;
+    background:var(--primary);
+    color:#fff;
+    text-decoration:none;
+    font-weight:700;
+    transition:.3s;
+}
+
+.btn-learn-more:hover{
+    background:var(--primary-dark);
+    transform:translateY(-3px);
+}
+
+.domain-full-image{
+    width:100%;
+    height:430px;
+    overflow:hidden;
+}
+
+.domain-full-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
+
+@media(max-width:768px){
+
+    .section-title h2{
+        font-size:2rem;
+    }
+
+    .domain-body h3{
+        font-size:1.8rem;
+    }
+
+    .domain-full-image{
+        height:250px;
+    }
+
+    .domain-text,
+    .domain-lead{
+        text-align:left;
+    }
+}
+.domain-body{
+    max-width:900px;
+    margin:auto;
+    padding:60px 30px;
+}
+
+.domain-tag{
+    display:inline-block;
+    background:rgba(13,105,56,.08);
+    color:var(--primary);
+    padding:8px 16px;
+    border-radius:30px;
+    font-size:.85rem;
+    font-weight:700;
+    margin-bottom:20px;
+}
+
+.main-dropdown{
+    display:none;
+}
+
+.main-dropdown.show{
+    display:block;
+}
+
+.themes-submenu{
+    display:none;
+}
+
+.themes-submenu.show{
+    display:block;
+}
+.btn-learn-more{
+    display:inline-flex;
+    align-items:center;
+    gap:12px;
+    padding:14px 28px;
+    background:linear-gradient(135deg,var(--primary),var(--primary-dark));
+    color:#fff;
+    text-decoration:none;
+    font-size:1rem;
+    font-weight:700;
+    border-radius:50px;
+    box-shadow:0 8px 20px rgba(13,105,56,.25);
+    transition:all .35s ease;
+    position:relative;
+    overflow:hidden;
+}
+
+.btn-learn-more i{
+    transition:transform .35s ease;
+}
+
+.btn-learn-more:hover{
+    transform:translateY(-4px);
+    box-shadow:0 12px 25px rgba(13,105,56,.35);
+}
+
+.btn-learn-more:hover i{
+    transform:translateX(6px);
+}
+
+.btn-learn-more::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:-100%;
+    width:100%;
+    height:100%;
+    background:rgba(255,255,255,.15);
+    transition:.5s;
+}
+
+.btn-learn-more:hover::before{
+    left:100%;
+}
+
+    </style>  
+</head>  
+<body>  
+
+<!-- --- NAVIGATION AVEC ICÔNE MENU UNIQUE --- -->  
+<nav class="navbar">  
+    <div class="nav-logo">  
+        <div class="logo-container">  
+            <img src="logo.jpg" alt="Logo F.J.E.R.E.">  
+        </div>  
+        <div class="nav-title">  
+            <h1>F.J.E.R.E. ONGD</h1>  
+            <span>RÉUSSIR ENSEMBLE</span>  
+        </div>  
+    </div>  
+    
+    <div class="nav-right-container">
+        <button class="menu-toggle-btn" onclick="toggleMainDropdown()" title="Menu">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <div class="main-dropdown" id="mainDropdown">
+            <a href="#"><i class="fas fa-home"></i> Accueil</a>
+            <a href="#"><i class="fas fa-bullseye"></i> Nos objectifs</a>
+            <a href="#"><i class="fas fa-info-circle"></i> À propos de nous</a>
+            <a href="#"><i class="fas fa-envelope"></i> Contact</a>
+            
+            <div class="dropdown-divider"></div>
+            
+            <div class="theme-trigger" onclick="toggleThemesSubmenu(event)">
+                <i class="fas fa-palette"></i> Changer le thème <i class="fas fa-chevron-down" style="margin-left: auto; font-size: 0.85rem;"></i>
+            </div>
+            
+            <div class="themes-submenu" id="themesSubmenu">
+                <button onclick="setTheme('default')"><i class="fas fa-leaf" style="color: #0d6938;"></i> Vert (Standard)</button>
+                <button onclick="setTheme('dark')"><i class="fas fa-moon" style="color: #10b981;"></i> Mode Sombre</button>
+                <button onclick="setTheme('light')"><i class="fas fa-sun" style="color: #2563eb;"></i> Mode Clair</button>
+                <button onclick="setTheme('ocean')"><i class="fas fa-water" style="color: #0284c7;"></i> Bleu Océan</button>
+                <button onclick="setTheme('orange')"><i class="fas fa-fire" style="color: #ea580c;"></i> Orange Énergie</button>
+                <button onclick="setTheme('purple')"><i class="fas fa-wand-magic-sparkles" style="color: #7c3aed;"></i> Améthyste</button>
+                <button onclick="setTheme('forest')"><i class="fas fa-tree" style="color: #15803d;"></i> Vert Forêt</button>
+            </div>
+        </div>
+    </div>
+</nav>  
+
+<!-- ===== SLIDER PROFESSIONNEL F.J.E.R.E ===== -->
+<div class="slider-container">
+    <button class="slider-btn slider-btn-prev" onclick="prevSlide()">
+        <i class="fas fa-chevron-left"></i>
+    </button>
+    <button class="slider-btn slider-btn-next" onclick="nextSlide()">
+        <i class="fas fa-chevron-right"></i>
+    </button>
+
+    <div class="slide active"><img src="slider1.jpg" alt="F.J.E.R.E ONGD"></div>
+    <div class="slide"><img src="slider2.jpg" alt="Formation Professionnelle"></div>
+    <div class="slide"><img src="slider3.jpg" alt="Agriculture"></div>
+    <div class="slide"><img src="slider4.jpg" alt="Entrepreneuriat"></div>
+    <div class="slide"><img src="slider5.jpg" alt="Actions Communautaires"></div>
+</div>
+<!-- =========================
+TITRE PRINCIPAL
+========================= -->
+<section class="section-title">
+    <span class="section-badge">NOS DOMAINES D'INTERVENTION</span>
+    <h2>Secteurs Stratégiques de Développement</h2>
+    <p>
+        La F.J.E.R.E. ONGD-ASBL met en œuvre des actions concrètes dans plusieurs
+        secteurs prioritaires afin de promouvoir le développement durable,
+        l'autonomisation économique, la protection sociale et le progrès
+        communautaire au profit des populations.
+    </p>
+</section>
+
+<div class="domains-wrapper">
+
+    <!-- DOMAINE 1 -->
+    <div class="domain-section">
+        <div class="domain-full-image">
+            <img src="agriculture.jpg" alt="Agriculture">
+        </div>
+
+        <div class="domain-body">
+            <span class="domain-tag">Domaine 01</span>
+
+            <h3>Agriculture Moderne et Sécurité Alimentaire</h3>
+
+            <p class="domain-lead">
+                Renforcer la production agricole pour garantir l'autosuffisance alimentaire et améliorer les revenus des ménages.
+            </p>
+
+            <p class="domain-text">
+                La F.J.E.R.E accompagne les agriculteurs, les coopératives et les jeunes entrepreneurs agricoles dans l'adoption de techniques modernes de production adaptées aux réalités locales.
+            </p>
+
+            <p class="domain-text">
+                Nos programmes favorisent la mécanisation agricole, l'accès aux semences améliorées, la formation technique, la transformation des produits agricoles ainsi que la commercialisation des récoltes.
+            </p>
+
+            <p class="domain-highlight">
+                Nous croyons qu'une agriculture performante constitue la base d'un développement économique durable et inclusif.
+            </p>
+
+            <a href="agriculture.html" class="btn-learn-more">
+                En savoir plus <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </div>
+
+    <!-- DOMAINE 2 -->
+    <div class="domain-section">
+        <div class="domain-full-image">
+            <img src="elevage.jpg" alt="Élevage">
+        </div>
+
+        <div class="domain-body">
+            <span class="domain-tag">Domaine 02</span>
+
+            <h3>Élevage et Production Animale</h3>
+
+            <p class="domain-lead">
+                Développer les filières animales comme moteur de croissance économique locale.
+            </p>
+
+            <p class="domain-text">
+                Nous soutenons les initiatives d'élevage bovin, caprin, porcin, avicole et piscicole afin de renforcer la sécurité alimentaire et les revenus des familles.
+            </p>
+
+            <p class="domain-text">
+                Les bénéficiaires reçoivent des formations techniques, un accompagnement vétérinaire ainsi que des conseils en gestion et commercialisation des produits d'élevage.
+            </p>
+
+            <p class="domain-highlight">
+                L'élevage constitue un puissant outil de lutte contre la pauvreté et de création d'emplois durables.
+            </p>
+
+            <a href="travail.html" class="btn-learn-more">
+                En savoir plus <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </div>
+
+    <!-- DOMAINE 3 -->
+    <div class="domain-section">
+        <div class="domain-full-image">
+            <img src="formation.jpg" alt="Formation">
+        </div>
+
+        <div class="domain-body">
+            <span class="domain-tag">Domaine 03</span>
+
+            <h3>Formation Professionnelle et Développement des Compétences</h3>
+
+            <p class="domain-lead">
+                Offrir aux jeunes des compétences pratiques adaptées aux besoins du marché du travail.
+            </p>
+
+            <p class="domain-text">
+                La F.J.E.R.E ambitionne de créer un centre de formation moderne destiné à développer les compétences techniques, artisanales et entrepreneuriales des jeunes.
+            </p>
+
+            <p class="domain-text">
+                Les formations couvriront plusieurs métiers porteurs tels que l'informatique, l'électricité, la mécanique, la maçonnerie, la couture, la plomberie et d'autres secteurs stratégiques.
+            </p>
+
+            <p class="domain-highlight">
+                La formation constitue la clé de l'autonomie, de l'employabilité et de la réussite professionnelle.
+            </p>
+
+            <a href="travail.html" class="btn-learn-more">
+                En savoir plus <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </div>
+
+    <!-- DOMAINE 4 -->
+    <div class="domain-section">
+<div class="domain-full-image">  
+            <img src="entrepreneuriat.jpg" alt="Entrepreneuriat">  
+        </div>
+
+        <div class="domain-body">
+            <span class="domain-tag">Domaine 04</span>
+
+            <h3>Entrepreneuriat et Incubation de Projets</h3>
+
+            <p class="domain-lead">
+                Accompagner les porteurs de projets vers la création d'entreprises viables et innovantes.
+            </p>
+
+            <p class="domain-text">
+                Notre programme d'incubation vise à identifier, former et accompagner les jeunes entrepreneurs dans le développement de leurs initiatives économiques et sociales.
+            </p>
+
+            <p class="domain-text">
+                Les bénéficiaires profitent d'un encadrement personnalisé, de formations en gestion, en leadership, en marketing et en recherche de financements.
+            </p>
+
+            <p class="domain-highlight">
+                Chaque projet réussi représente une opportunité supplémentaire de développement pour toute la communauté.
+            </p>
+
+            <a href="travail.html" class="btn-learn-more">
+                En savoir plus <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </div>
+
+    <!-- DOMAINE 5 -->
+    <div class="domain-section">
+        <div class="domain-full-image">
+            <img src="emploi.jpg" alt="Emploi">
+        </div>
+
+        <div class="domain-body">
+            <span class="domain-tag">Domaine 05</span>
+
+            <h3>Emploi Local et Sous-Traitance</h3>
+
+            <p class="domain-lead">
+                Faciliter l'accès des jeunes aux opportunités d'emploi et d'insertion professionnelle.
+            </p>
+
+            <p class="domain-text">
+                La F.J.E.R.E prévoit la mise en place d'une structure spécialisée dans la sous-traitance et la fourniture de main-d'œuvre qualifiée pour les entreprises publiques et privées.
+            </p>
+
+            <p class="domain-text">
+                Cette initiative permettra de réduire le chômage, valoriser les compétences locales et renforcer l'économie régionale.
+            </p>
+
+            <p class="domain-highlight">
+                L'emploi décent demeure un facteur essentiel de stabilité sociale et de développement économique.
+            </p>
+
+            <a href="travail.html" class="btn-learn-more">
+                En savoir plus <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </div>
+
+    <!-- DOMAINE 6 -->
+    <div class="domain-section">
+        <div class="domain-full-image">
+            <img src="autres.jpg" alt="Femmes">
+        </div>
+
+        <div class="domain-body">
+            <span class="domain-tag">Domaine 06</span>
+
+            <h3>Autonomisation des Femmes et Inclusion Sociale</h3>
+
+            <p class="domain-lead">
+                Promouvoir l'égalité des chances et le leadership féminin dans toutes les sphères de la société.
+            </p>
+
+            <p class="domain-text">
+                Nos actions visent à renforcer les capacités économiques et sociales des femmes à travers l'entrepreneuriat, la formation, les activités génératrices de revenus et l'éducation financière.
+            </p>
+
+            <p class="domain-text">
+                Nous encourageons également leur participation active dans les processus de prise de décision au sein des communautés.
+            </p>
+
+            <p class="domain-highlight">
+                L'autonomisation des femmes est un levier majeur de transformation sociale et de réduction de la pauvreté.
+            </p>
+
+            <a href="travail.html" class="btn-learn-more">
+                En savoir plus <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </div>
+
+    <!-- DOMAINE 7 -->
+    <div class="domain-section">
+        <div class="domain-full-image">
+            <img src="autre.jpg" alt="Droits humains">
+        </div>
+
+        <div class="domain-body">
+            <span class="domain-tag">Domaine 07</span>
+
+            <h3>Droits Humains, Santé et Développement Communautaire</h3>
+
+            <p class="domain-lead">
+                Contribuer à la construction de communautés inclusives, résilientes et respectueuses de la dignité humaine.
+            </p>
+
+            <p class="domain-text">
+                La F.J.E.R.E mène des campagnes de sensibilisation sur les droits humains, la citoyenneté responsable, la cohésion sociale et la protection des groupes vulnérables.
+            </p>
+
+            <p class="domain-text">
+                Nous développons également des initiatives dans les domaines de la santé communautaire, de l'accès aux services sociaux de base et de la protection de l'environnement.
+            </p>
+
+            <p class="domain-highlight">
+                Un développement durable ne peut être atteint sans justice sociale, santé communautaire et respect des droits fondamentaux.
+            </p>
+
+            <a href="travail.html" class="btn-learn-more">
+                En savoir plus <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </div>
+<!-- DOMAINE 08 -->
+<div class="domain-section">
+    <div class="domain-full-image">
+        <img src="environnement.jpg" alt="Environnement et assainissement">
+    </div>
+
+    <div class="domain-body">
+        <span class="domain-tag">Domaine 08</span>
+
+        <h3>Environnement et Assainissement</h3>
+
+        <p class="domain-lead">
+            Promouvoir un cadre de vie sain, durable et respectueux de l’environnement pour toutes les communautés.
+        </p>
+
+        <p class="domain-text">
+            La F.J.E.R.E s’engage activement dans la protection de l’environnement à travers des actions de sensibilisation,
+            de reboisement, de gestion des déchets et de lutte contre l’insalubrité dans les milieux urbains et ruraux.
+        </p>
+
+        <p class="domain-text">
+            Nous encourageons les pratiques écologiques responsables afin de préserver les ressources naturelles
+            et garantir un avenir durable aux générations futures.
+        </p>
+
+        <p class="domain-highlight">
+            Un environnement propre et sain est la base indispensable du développement humain et communautaire.
+        </p>
+
+        <a href="travail.html" class="btn-learn-more">
+            En savoir plus <i class="fas fa-arrow-right"></i>
+        </a>
+    </div>
+</div>
+</div>
+<!-- --- BOUTON DE SUPPORT TECHNIQUE FLOUTANT --- -->
+<a href="support.html" class="support-tech" title="Support Technique">
+    <i class="fas fa-headset"></i>
+</a>
+
+<!-- --- FOOTER --- -->
+<footer>
+    <div class="footer-grid">
+        <div class="footer-col">
+            <h4>F.J.E.R.E. ONGD</h4>
+            <p>Fondation pour les Jeunes et l'Épanouissement Rural Économique.</p>
+            <p>Ensemble, bâtissons un avenir durable pour toutes nos communautés.</p>
+        </div>
+        <div class="footer-col">
+            <h4>Liens utiles</h4>
+            <ul class="footer-links">
+                <li><a href="#">Accueil</a></li>
+                <li><a href="#">Nos Objectifs</a></li>
+                <li><a href="#">À Propos</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Contact</h4>
+            <ul class="footer-contact">
+                <li><i class="fas fa-map-marker-alt"></i> Siège Social, RD Congo</li>
+                <li><i class="fas fa-envelope"></i>bitangalovictoi@gmail.com</li>
+                <li><i class="fas fa-phone"></i> +243 978 910 379</li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2026 F.J.E.R.E ONGD-ASBL. Tous droits réservés.</p>
+
+    </div>
+</footer>
+
+<!-- --- SCRIPT JAVASCRIPT LOGIQUE --- -->
+<script>
+
+// ==========================
+// MENU PRINCIPAL
+// ==========================
+function toggleMainDropdown() {
+
+    const menu = document.getElementById("mainDropdown");
+
+    menu.classList.toggle("show");
+
+    // Fermer le sous-menu quand on ferme le menu principal
+    if (!menu.classList.contains("show")) {
+        document
+            .getElementById("themesSubmenu")
+            .classList.remove("show");
+    }
+}
+
+// ==========================
+// SOUS-MENU THÈMES
+// ==========================
+function toggleThemesSubmenu(event) {
+
+    event.stopPropagation();
+
+    document
+        .getElementById("themesSubmenu")
+        .classList.toggle("show");
+}
+
+// ==========================
+// CHANGEMENT DE THÈME
+// ==========================
+function setTheme(theme) {
+
+    if(theme === "default"){
+
+        document.documentElement.removeAttribute("data-theme");
+
+    }else{
+
+        document.documentElement.setAttribute(
+            "data-theme",
+            theme
+        );
+    }
+
+    localStorage.setItem("theme", theme);
+}
+
+// ==========================
+// CHARGEMENT DU THÈME
+// ==========================
+window.addEventListener("DOMContentLoaded", () => {
+
+    const savedTheme =
+        localStorage.getItem("theme");
+
+    if(savedTheme && savedTheme !== "default"){
+
+        document.documentElement.setAttribute(
+            "data-theme",
+            savedTheme
+        );
+    }
+});
+
+// ==========================
+// FERMER SI CLIC À L'EXTÉRIEUR
+// ==========================
+document.addEventListener("click", function(event){
+
+    const menu =
+        document.getElementById("mainDropdown");
+
+    const submenu =
+        document.getElementById("themesSubmenu");
+
+    const button =
+        document.querySelector(".menu-toggle-btn");
+
+    if(
+        !menu.contains(event.target) &&
+        !button.contains(event.target)
+    ){
+        menu.classList.remove("show");
+        submenu.classList.remove("show");
+    }
+});
+
+
+// ==========================
+// SLIDER
+// ==========================
+let currentSlide = 0;
+
+const slides =
+    document.querySelectorAll(".slide");
+
+function showSlide(index){
+
+    slides[currentSlide]
+        .classList.remove("active");
+
+    currentSlide =
+        (index + slides.length)
+        % slides.length;
+
+    slides[currentSlide]
+        .classList.add("active");
+}
+
+function nextSlide(){
+    showSlide(currentSlide + 1);
+}
+
+function prevSlide(){
+    showSlide(currentSlide - 1);
+}
+
+setInterval(nextSlide, 5000);
+
+const domainSlides =
+document.querySelectorAll(".domain-slide");
+
+let currentDomainSlide = 0;
+
+function autoDomainSlider(){
+
+    domainSlides[currentDomainSlide]
+        .classList.remove("active");
+
+    currentDomainSlide =
+        (currentDomainSlide + 1)
+        % domainSlides.length;
+
+    domainSlides[currentDomainSlide]
+        .classList.add("active");
+}
+
+setInterval(autoDomainSlider, 4000);
+</script>
+</body>
+</html>
