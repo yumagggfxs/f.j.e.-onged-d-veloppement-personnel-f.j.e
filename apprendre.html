@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apprendre Davantage - F.J.E.R.E. ONGD</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+    /* CSS REPRIS DU MODÈLE */
+    *{ margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI',sans-serif; }
+    :root{ --primary:#0d6938; --primary-dark:#074623; --light:#f6faf7; --text:#1f2937; }
+    body{ background:var(--light); color:var(--text); }
+
+    /* HEADER IDENTIQUE */
+    .navbar{ position:fixed; top:0; left:0; width:100%; height:80px; background:rgba(255,255,255,.92); backdrop-filter:blur(15px); display:flex; align-items:center; padding:0 8%; z-index:1000; border-bottom:1px solid rgba(0,0,0,.05); }
+    .nav-logo{ display:flex; align-items:center; gap:15px; }
+    .logo-container{ width:55px; height:55px; border-radius:50%; overflow:hidden; border:2px solid var(--primary); }
+    .logo-container img{ width:100%; height:100%; object-fit:cover; }
+    .nav-title h1{ font-size:18px; font-weight:900; color:var(--primary-dark); }
+    .nav-title span{ font-size:11px; font-weight:700; color:var(--primary); }
+
+    /* HERO IDENTIQUE */
+    .hero{ margin-top:80px; padding:120px 20px; text-align:center; color:white; background:linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.65)), url('https://images.unsplash.com/photo-1521791136064-7986c2920216'); background-size:cover; background-position:center; }
+    .hero h1{ font-size:50px; font-weight:900; margin-bottom:20px; }
+    .hero p{ max-width:950px; margin:auto; line-height:2; font-size:18px; }
+
+    /* CONTENU */
+    .container{ width:90%; max-width:1300px; margin:auto; padding:80px 0; }
+    .message-box{ background:white; padding:40px; border-radius:20px; box-shadow:0 10px 30px rgba(0,0,0,.08); border-left:6px solid var(--primary); line-height:2; }
+    
+    footer{ background:#03140b; color:white; text-align:center; padding:40px; margin-top:60px; }
+    /* ===== FORMULAIRE ===== */
+
+form{
+background:white;
+padding:35px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+margin-top:30px;
+}
+
+/* TITRE */
+form h2{
+text-align:center;
+color:var(--primary-dark);
+font-size:28px;
+margin-bottom:8px;
+font-weight:800;
+}
+
+/* SOUS-TITRE */
+form p{
+text-align:center;
+color:#6b7280;
+font-size:15px;
+margin-bottom:25px;
+line-height:1.6;
+}
+
+/* INPUTS */
+input, select, textarea{
+width:100%;
+padding:14px;
+margin-bottom:15px;
+border:1px solid #ddd;
+border-radius:12px;
+font-size:15px;
+outline:none;
+transition:0.3s;
+background:#fff;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+border-color:var(--primary);
+box-shadow:0 0 0 3px rgba(13,105,56,0.15);
+}
+
+/* TEXTAREA */
+textarea{
+min-height:120px;
+resize:vertical;
+}
+
+/* CHECKBOX BIEN ALIGNÉ */
+.checkbox{
+display:flex;
+align-items:flex-start;
+gap:10px;
+margin:15px 0;
+font-size:14px;
+line-height:1.6;
+}
+
+.checkbox input{
+margin-top:4px;
+transform:scale(1.1);
+cursor:pointer;
+}
+
+/* BOUTON */
+button{
+width:100%;
+padding:15px;
+background:var(--primary);
+color:white;
+border:none;
+border-radius:30px;
+font-size:16px;
+font-weight:700;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+background:var(--primary-dark);
+transform:translateY(-2px);
+}
+
+/* MESSAGE ERREUR */
+.notice{
+text-align:center;
+color:#dc2626;
+margin-top:10px;
+font-weight:600;
+font-size:14px;
+}
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="nav-logo">
+        <div class="logo-container">
+            <img src="logo.jpg" alt="Logo FJERE">
+        </div>
+        <div class="nav-title">
+            <h1>F.J.E.R.E.</h1>
+            <span>RÉUSSIR ENSEMBLE</span>
+        </div>
+    </div>
+</nav>
+
+<section class="hero">
+    <h1>Apprendre Davantage</h1>
+    <p>
+        La F.J.E.R.E. s'engage à transformer les mentalités par l'éducation continue. 
+        Découvrez comment nos programmes renforcent les capacités et préparent la 
+        communauté aux défis de demain.
+    </p>
+</section>
+
+<div class="container">
+    <div class="message-box">
+        <h2>Une Vision Orientée vers l'Avenir</h2>
+        <p>
+            Apprendre est le moteur du changement. Chez F.J.E.R.E., nous pensons que chaque 
+            individu possède un potentiel inexploité qui, une fois nourri par la formation 
+            et l'accompagnement, devient une force motrice pour le développement local.
+        </p>
+        <br>
+        <p>
+            Nos modules de formation sont conçus pour être pratiques, innovants et accessibles. 
+            Que ce soit dans le domaine de l'entrepreneuriat, du leadership ou des métiers 
+            techniques, nous mettons tout en œuvre pour que chaque apprenant devienne 
+            un acteur clé de sa propre réussite et de celle de sa communauté.
+        </p>
+    </div>
+    
+</div>
+<form onsubmit="return validateForm()">
+
+<h2>Rejoindre la F.J.E.R.E.</h2>
+<p>Remplissez ce formulaire pour manifester votre intérêt</p>
+
+<input type="text" id="name" placeholder="Nom complet" required>
+<input type="tel" id="phone" placeholder="Téléphone" required>
+<input type="email" id="email" placeholder="Email" required>
+
+<select id="domain" required>
+<option value="">Choisir votre domaine</option>
+<option>Éducation</option>
+<option>Entrepreneuriat</option>
+<option>Leadership</option>
+<option>Technologie</option>
+<option>Action sociale</option>
+</select>
+
+<textarea id="message" placeholder="Votre motivation" required></textarea>
+
+<div class="checkbox">
+<input type="checkbox" id="accept">
+<label for="accept">J’accepte les valeurs et conditions de la F.J.E.R.E.</label>
+</div>
+<div class="g-recaptcha" data-sitekey="6LdNwQ8tAAAAAFxjwSAfUpqPXhs_5kRWQ9U-4zSR"></div>
+
+<button type="submit">Confirmer ma demande</button>
+
+<div class="notice" id="notice"></div>
+
+</form>
+<footer>
+    © 2026 F.J.E.R.E. ONGD — Valoriser les compétences, promouvoir l'excellence.
+</footer>
+<script>
+
+function validateForm(){
+
+let name = document.getElementById("name").value;
+let phone = document.getElementById("phone").value;
+let email = document.getElementById("email").value;
+let domain = document.getElementById("domain").value;
+let message = document.getElementById("message").value;
+let accept = document.getElementById("accept");
+let notice = document.getElementById("notice");
+
+// Vérification checkbox
+if(!accept.checked){
+notice.innerText = "Vous devez accepter les conditions de l'organisation.";
+return false;
+}
+
+// Vérification reCAPTCHA
+let recaptcha = grecaptcha.getResponse();
+if(recaptcha.length === 0){
+notice.innerText = "Veuillez confirmer que vous n'êtes pas un robot.";
+return false;
+}
+
+// Simulation d’envoi (ici tu peux brancher API plus tard)
+console.log({
+name, phone, email, domain, message
+});
+
+// Redirection vers page de succès
+window.location.href = "merci.html";
+
+return false;
+}
+
+</script>
+</body>
+</html>
